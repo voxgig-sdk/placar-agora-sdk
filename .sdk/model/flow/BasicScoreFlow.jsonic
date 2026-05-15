@@ -1,0 +1,22 @@
+# BasicScoreFlow
+
+main: kit: flow: BasicScoreFlow:
+{
+  entity: "score",
+  kind: "basic",
+  name: "BasicScoreFlow",
+  step: [
+    {
+      op: "list",
+      valid: [
+        {
+          apply: "ItemExists",
+          def: {
+            ref: "score_ref01"
+          }
+        }
+      ]
+    }
+  ],
+  "key$": "BasicScoreFlow"
+}

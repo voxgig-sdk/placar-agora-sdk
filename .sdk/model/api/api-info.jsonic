@@ -1,0 +1,23 @@
+# API Information
+
+
+main: {
+  kit: {
+    info: {
+      contact: {
+        url: "https://golfeito.asamkt.com.br/"
+      }
+      description: "Placar Agora provides live scores, final results, and upcoming game schedules for sports enthusiasts. It allows users to follow their favorite teams and view real-time updates on various matches."
+      servers: [
+        {
+          description: "Production server"
+          url: "https://golfeito.asamkt.com.br"
+        }
+      ]
+      title: "Placar Agora"
+      version: "1.0.0"
+    }
+  }
+}
+
+}

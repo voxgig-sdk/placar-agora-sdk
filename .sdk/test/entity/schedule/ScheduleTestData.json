@@ -1,0 +1,50 @@
+{
+  "existing": {
+    "schedule": {
+      "SCHEDULE00": {
+        "away_team": {},
+        "competition": "s51",
+        "home_team": {},
+        "match_id": "MATCH01",
+        "scheduled_time": "s54",
+        "sport": "s55",
+        "status": "s56",
+        "venue": "s57"
+      },
+      "SCHEDULE01": {
+        "away_team": {},
+        "competition": "sa1",
+        "home_team": {},
+        "match_id": "MATCH01",
+        "scheduled_time": "sa4",
+        "sport": "sa5",
+        "status": "sa6",
+        "venue": "sa7"
+      },
+      "SCHEDULE02": {
+        "away_team": {},
+        "competition": "sf1",
+        "home_team": {},
+        "match_id": "MATCH01",
+        "scheduled_time": "sf4",
+        "sport": "sf5",
+        "status": "sf6",
+        "venue": "sf7"
+      }
+    }
+  },
+  "new": {
+    "schedule": {
+      "schedule_ref01": {
+        "away_team": {},
+        "competition": "s141",
+        "home_team": {},
+        "match_id": "MATCH01",
+        "scheduled_time": "s144",
+        "sport": "s145",
+        "status": "s146",
+        "venue": "s147"
+      }
+    }
+  }
+}

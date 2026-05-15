@@ -1,0 +1,54 @@
+{
+  "existing": {
+    "score": {
+      "SCORE00": {
+        "away_team": {},
+        "competition": "s5b",
+        "home_team": {},
+        "match_date": "s5d",
+        "match_id": "MATCH01",
+        "minute": "s5f",
+        "sport": "s60",
+        "start_time": "s61",
+        "status": "s62"
+      },
+      "SCORE01": {
+        "away_team": {},
+        "competition": "sb5",
+        "home_team": {},
+        "match_date": "sb7",
+        "match_id": "MATCH01",
+        "minute": "sb9",
+        "sport": "sba",
+        "start_time": "sbb",
+        "status": "sbc"
+      },
+      "SCORE02": {
+        "away_team": {},
+        "competition": "s10f",
+        "home_team": {},
+        "match_date": "s111",
+        "match_id": "MATCH01",
+        "minute": "s113",
+        "sport": "s114",
+        "start_time": "s115",
+        "status": "s116"
+      }
+    }
+  },
+  "new": {
+    "score": {
+      "score_ref01": {
+        "away_team": {},
+        "competition": "s169",
+        "home_team": {},
+        "match_date": "s16b",
+        "match_id": "MATCH01",
+        "minute": "s16d",
+        "sport": "s16e",
+        "start_time": "s16f",
+        "status": "s170"
+      }
+    }
+  }
+}

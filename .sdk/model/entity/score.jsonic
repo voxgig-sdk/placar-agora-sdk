@@ -1,0 +1,146 @@
+# Entity: score
+
+main: kit: entity: score: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "away_team"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "competition"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "home_team"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "match_date"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "match_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "minute"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sport"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "start_time"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "score"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "date"
+                orig: "date"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sport"
+                orig: "sport"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "team"
+                orig: "team"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api/final-results"
+          parts: [
+            "api"
+            "final-results"
+          ]
+          select: {
+            exist: [
+              "date"
+              "sport"
+              "team"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "sport"
+                orig: "sport"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "team"
+                orig: "team"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api/live-scores"
+          parts: [
+            "api"
+            "live-scores"
+          ]
+          select: {
+            exist: [
+              "sport"
+              "team"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

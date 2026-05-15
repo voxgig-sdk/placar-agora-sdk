@@ -1,0 +1,23 @@
+# Guide
+
+guide: {
+  metrics: count: entity: 2
+  metrics: count: path: 3
+  metrics: count: method: 3
+
+  entity: schedule: {
+    path: "/api/upcoming-games": {
+      op: list: method: *GET
+    }
+  }
+
+  entity: score: {
+    path: "/api/final-results": {
+      op: list: method: *GET
+    }
+    path: "/api/live-scores": {
+      op: list: method: *GET
+    }
+  }
+
+}

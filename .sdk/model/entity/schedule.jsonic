@@ -1,0 +1,105 @@
+# Entity: schedule
+
+main: kit: entity: schedule: {
+
+  alias: field: {}
+
+  fields: [
+    {
+      name: "away_team"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "competition"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "home_team"
+      req: false
+      type: "`$OBJECT`"
+    }
+    {
+      name: "match_id"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "scheduled_time"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "sport"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "status"
+      req: false
+      type: "`$STRING`"
+    }
+    {
+      name: "venue"
+      req: false
+      type: "`$STRING`"
+    }
+  ]
+
+  name: "schedule"
+  op: {
+    list: {
+      name: "list"
+      points: [
+        {
+          args: {
+            query: [
+              {
+                kind: "query"
+                name: "date"
+                orig: "date"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "sport"
+                orig: "sport"
+                reqd: false
+                type: "`$STRING`"
+              }
+              {
+                kind: "query"
+                name: "team"
+                orig: "team"
+                reqd: false
+                type: "`$STRING`"
+              }
+            ]
+          }
+          method: "GET"
+          orig: "/api/upcoming-games"
+          parts: [
+            "api"
+            "upcoming-games"
+          ]
+          select: {
+            exist: [
+              "date"
+              "sport"
+              "team"
+            ]
+          }
+          transform: {
+            req: "`reqdata`"
+            res: "`body`"
+          }
+        }
+      ]
+    }
+  }
+
+
+
+}

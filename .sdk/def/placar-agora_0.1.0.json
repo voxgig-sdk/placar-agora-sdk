@@ -1,0 +1,398 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Placar Agora",
+    "description": "Placar Agora provides live scores, final results, and upcoming game schedules for sports enthusiasts. It allows users to follow their favorite teams and view real-time updates on various matches.",
+    "version": "1.0.0",
+    "contact": {
+      "url": "https://golfeito.asamkt.com.br/"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://golfeito.asamkt.com.br",
+      "description": "Production server"
+    }
+  ],
+  "paths": {
+    "/api/live-scores": {
+      "get": {
+        "summary": "Get live scores",
+        "description": "Retrieves current live scores for ongoing matches across various sports",
+        "operationId": "getLiveScores",
+        "tags": [
+          "Scores"
+        ],
+        "parameters": [
+          {
+            "name": "sport",
+            "in": "query",
+            "description": "Filter by sport type",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "football",
+                "basketball",
+                "volleyball",
+                "tennis"
+              ]
+            }
+          },
+          {
+            "name": "team",
+            "in": "query",
+            "description": "Filter by team name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with live scores",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "matches": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/LiveMatch"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/final-results": {
+      "get": {
+        "summary": "Get final results",
+        "description": "Retrieves final results of completed matches",
+        "operationId": "getFinalResults",
+        "tags": [
+          "Scores"
+        ],
+        "parameters": [
+          {
+            "name": "sport",
+            "in": "query",
+            "description": "Filter by sport type",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "football",
+                "basketball",
+                "volleyball",
+                "tennis"
+              ]
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Filter by date (YYYY-MM-DD)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "team",
+            "in": "query",
+            "description": "Filter by team name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with final results",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "matches": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/FinishedMatch"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    },
+    "/api/upcoming-games": {
+      "get": {
+        "summary": "Get upcoming games",
+        "description": "Retrieves schedule of upcoming matches",
+        "operationId": "getUpcomingGames",
+        "tags": [
+          "Schedules"
+        ],
+        "parameters": [
+          {
+            "name": "sport",
+            "in": "query",
+            "description": "Filter by sport type",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "football",
+                "basketball",
+                "volleyball",
+                "tennis"
+              ]
+            }
+          },
+          {
+            "name": "date",
+            "in": "query",
+            "description": "Filter by date (YYYY-MM-DD)",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "team",
+            "in": "query",
+            "description": "Filter by team name",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Successful response with upcoming games",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "matches": {
+                      "type": "array",
+                      "items": {
+                        "$ref": "#/components/schemas/UpcomingMatch"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "LiveMatch": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "string",
+            "description": "Unique identifier for the match"
+          },
+          "sport": {
+            "type": "string",
+            "description": "Type of sport"
+          },
+          "competition": {
+            "type": "string",
+            "description": "Name of the competition or league"
+          },
+          "homeTeam": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "score": {
+                "type": "integer"
+              }
+            }
+          },
+          "awayTeam": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "score": {
+                "type": "integer"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "Current match status",
+            "enum": [
+              "live",
+              "halftime",
+              "pending"
+            ]
+          },
+          "minute": {
+            "type": "string",
+            "description": "Current minute of the match"
+          },
+          "startTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Match start time"
+          }
+        }
+      },
+      "FinishedMatch": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "string",
+            "description": "Unique identifier for the match"
+          },
+          "sport": {
+            "type": "string",
+            "description": "Type of sport"
+          },
+          "competition": {
+            "type": "string",
+            "description": "Name of the competition or league"
+          },
+          "homeTeam": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "score": {
+                "type": "integer"
+              }
+            }
+          },
+          "awayTeam": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "score": {
+                "type": "integer"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "Match status",
+            "enum": [
+              "finished",
+              "completed"
+            ]
+          },
+          "matchDate": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Date and time when the match took place"
+          }
+        }
+      },
+      "UpcomingMatch": {
+        "type": "object",
+        "properties": {
+          "matchId": {
+            "type": "string",
+            "description": "Unique identifier for the match"
+          },
+          "sport": {
+            "type": "string",
+            "description": "Type of sport"
+          },
+          "competition": {
+            "type": "string",
+            "description": "Name of the competition or league"
+          },
+          "homeTeam": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "awayTeam": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            }
+          },
+          "status": {
+            "type": "string",
+            "description": "Match status",
+            "enum": [
+              "scheduled",
+              "upcoming"
+            ]
+          },
+          "scheduledTime": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Scheduled start time of the match"
+          },
+          "venue": {
+            "type": "string",
+            "description": "Venue where the match will be played"
+          }
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Scores",
+      "description": "Operations related to live and final match scores"
+    },
+    {
+      "name": "Schedules",
+      "description": "Operations related to upcoming game schedules"
+    }
+  ]
+}
