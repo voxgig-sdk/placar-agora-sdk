@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	sdk "github.com/voxgig-sdk/placar-agora-sdk"
-	"github.com/voxgig-sdk/placar-agora-sdk/core"
+	sdk "github.com/voxgig-sdk/placar-agora-sdk/go"
+	"github.com/voxgig-sdk/placar-agora-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/placar-agora-sdk/go/utility/struct"
 )
 
 func TestScoreEntity(t *testing.T) {

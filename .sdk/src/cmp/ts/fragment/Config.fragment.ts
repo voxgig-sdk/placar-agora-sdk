@@ -29,7 +29,7 @@ class Config {
 
 
   options = {
-    base: 'https://golfeito.asamkt.com.br',
+    base: '$$main.kit.info.servers.0.url$$',
 
     'AUTHBLOCK'headers: 'HEADERS',
 

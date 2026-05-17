@@ -6,8 +6,8 @@ import (
 	"strings"
 	"testing"
 
-	sdk "github.com/voxgig-sdk/placar-agora-sdk"
-	"github.com/voxgig-sdk/placar-agora-sdk/core"
+	sdk "github.com/voxgig-sdk/placar-agora-sdk/go"
+	"github.com/voxgig-sdk/placar-agora-sdk/go/core"
 )
 
 func TestScheduleDirect(t *testing.T) {

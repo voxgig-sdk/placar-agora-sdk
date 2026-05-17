@@ -3,7 +3,7 @@ package sdktest
 import (
 	"testing"
 
-	sdk "github.com/voxgig-sdk/placar-agora-sdk"
+	sdk "github.com/voxgig-sdk/placar-agora-sdk/go"
 )
 
 func TestExists(t *testing.T) {

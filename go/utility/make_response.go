@@ -1,6 +1,6 @@
 package utility
 
-import "github.com/voxgig-sdk/placar-agora-sdk/core"
+import "github.com/voxgig-sdk/placar-agora-sdk/go/core"
 
 func makeResponseUtil(ctx *core.Context) (*core.Response, error) {
 	if ctx.Out["response"] != nil {

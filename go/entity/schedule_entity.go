@@ -1,9 +1,9 @@
 package entity
 
 import (
-	"github.com/voxgig-sdk/placar-agora-sdk/core"
+	"github.com/voxgig-sdk/placar-agora-sdk/go/core"
 
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/placar-agora-sdk/go/utility/struct"
 )
 
 type ScheduleEntity struct {

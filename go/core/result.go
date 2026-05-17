@@ -1,7 +1,7 @@
 package core
 
 import (
-	vs "github.com/voxgig/struct"
+	vs "github.com/voxgig-sdk/placar-agora-sdk/go/utility/struct"
 )
 
 type Result struct {

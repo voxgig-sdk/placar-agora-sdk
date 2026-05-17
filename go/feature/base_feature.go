@@ -1,7 +1,7 @@
 package feature
 
 import (
-	"github.com/voxgig-sdk/placar-agora-sdk/core"
+	"github.com/voxgig-sdk/placar-agora-sdk/go/core"
 )
 
 type BaseFeature struct {
