@@ -61,14 +61,12 @@ def _schedule_direct_setup(mockres):
     env = runner.env_override({
         "PLACARAGORA_TEST_SCHEDULE_ENTID": {},
         "PLACARAGORA_TEST_LIVE": "FALSE",
-        "PLACARAGORA_APIKEY": "NONE",
     })
 
     live = env.get("PLACARAGORA_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {
-            "apikey": env.get("PLACARAGORA_APIKEY"),
         }
         client = PlacarAgoraSDK(merged_opts)
         return {

@@ -113,7 +113,6 @@ function basicSetup(extra?: any) {
     'PLACAR_AGORA_TEST_SCORE_ENTID': idmap,
     'PLACAR_AGORA_TEST_LIVE': 'FALSE',
     'PLACAR_AGORA_TEST_EXPLAIN': 'FALSE',
-    'PLACAR_AGORA_APIKEY': 'NONE',
   })
 
   idmap = env['PLACAR_AGORA_TEST_SCORE_ENTID']
@@ -123,7 +122,6 @@ function basicSetup(extra?: any) {
   if (live) {
     client = new PlacarAgoraSDK(merge([
       {
-        apikey: env.PLACAR_AGORA_APIKEY,
       },
       extra
     ]))

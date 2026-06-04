@@ -62,14 +62,12 @@ def score_direct_setup(mockres)
   env = Runner.env_override({
     "PLACARAGORA_TEST_SCORE_ENTID" => {},
     "PLACARAGORA_TEST_LIVE" => "FALSE",
-    "PLACARAGORA_APIKEY" => "NONE",
   })
 
   live = env["PLACARAGORA_TEST_LIVE"] == "TRUE"
 
   if live
     merged_opts = {
-      "apikey" => env["PLACARAGORA_APIKEY"],
     }
     client = PlacarAgoraSDK.new(merged_opts)
     return {

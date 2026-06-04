@@ -86,7 +86,6 @@ function score_basic_setup($extra)
         "PLACARAGORA_TEST_SCORE_ENTID" => $idmap,
         "PLACARAGORA_TEST_LIVE" => "FALSE",
         "PLACARAGORA_TEST_EXPLAIN" => "FALSE",
-        "PLACARAGORA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +97,6 @@ function score_basic_setup($extra)
     if ($env["PLACARAGORA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["PLACARAGORA_APIKEY"],
             ],
             $extra ?? [],
         ]);

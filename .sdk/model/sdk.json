@@ -16,7 +16,15 @@
           }
         ],
         "title": "Placar Agora",
-        "version": "1.0.0"
+        "version": "1.0.0",
+        "tagline": "Live scores, final results, and upcoming fixtures for Brazilian football",
+        "homepage": "https://golfeito.asamkt.com.br",
+        "about_md": "Placar Agora (\"Score Now\") is a Brazilian football (soccer) scores portal that surfaces live games, final results, and upcoming fixtures. The site is published in Portuguese under the [Placar Agora](https://golfeito.asamkt.com.br) brand and embeds live-score data feeds for match coverage.\n\nWhat you can pull from the API:\n\n- **Jogos ao vivo** — live, in-progress matches\n- **Resultados finais** — completed match results\n- **Próximos jogos** — scheduled upcoming fixtures\n\nThe upstream public listing references a competitions endpoint backed by `api.football-data.org/v4/competitions/`, suggesting football-data.org style competition data underneath. Authentication requirements, rate limits, and licence terms are not published on the homepage, and CORS appears to be disabled at the server, so server-side use is the safer assumption.",
+        "entity_desc": {
+          "schedule": "Upcoming football fixtures — the \"Próximos jogos\" feed listing scheduled matches.",
+          "score": "Live and final match scores — the \"Jogos ao vivo\" and \"Resultados finais\" feeds."
+        },
+        "auth": false
       },
       "config": {
         "auth": {
@@ -24,7 +32,15 @@
         },
         "headers": {
           "content-type": "application/json"
-        }
+        },
+        "docs_order": [
+          "ts",
+          "py",
+          "php",
+          "go",
+          "rb",
+          "lua"
+        ]
       },
       "entity": {
         "schedule": {
