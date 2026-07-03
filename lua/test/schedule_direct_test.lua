@@ -63,12 +63,14 @@ function schedule_direct_setup(mockres)
   local env = runner.env_override({
     ["PLACARAGORA_TEST_SCHEDULE_ENTID"] = {},
     ["PLACARAGORA_TEST_LIVE"] = "FALSE",
+    ["PLACARAGORA_APIKEY"] = "NONE",
   })
 
   local live = env["PLACARAGORA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {
+      apikey = env["PLACARAGORA_APIKEY"],
     }
     local client = sdk.new(merged_opts)
     return {

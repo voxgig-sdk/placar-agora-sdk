@@ -92,6 +92,7 @@ def _schedule_basic_setup(extra):
         "PLACARAGORA_TEST_SCHEDULE_ENTID": idmap,
         "PLACARAGORA_TEST_LIVE": "FALSE",
         "PLACARAGORA_TEST_EXPLAIN": "FALSE",
+        "PLACARAGORA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -102,6 +103,7 @@ def _schedule_basic_setup(extra):
     if env.get("PLACARAGORA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
+                "apikey": env.get("PLACARAGORA_APIKEY"),
             },
             extra or {},
         ])

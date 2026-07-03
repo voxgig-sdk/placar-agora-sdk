@@ -93,12 +93,14 @@ func scoreDirectSetup(mockres any) *scoreDirectSetupResult {
 	env := envOverride(map[string]any{
 		"PLACARAGORA_TEST_SCORE_ENTID": map[string]any{},
 		"PLACARAGORA_TEST_LIVE":    "FALSE",
+		"PLACARAGORA_APIKEY":       "NONE",
 	})
 
 	live := env["PLACARAGORA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
+			"apikey": env["PLACARAGORA_APIKEY"],
 		}
 		client := sdk.NewPlacarAgoraSDK(mergedOpts)
 

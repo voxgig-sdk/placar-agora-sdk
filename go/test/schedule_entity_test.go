@@ -119,6 +119,7 @@ func scheduleBasicSetup(extra map[string]any) *entityTestSetup {
 		"PLACARAGORA_TEST_SCHEDULE_ENTID": idmap,
 		"PLACARAGORA_TEST_LIVE":      "FALSE",
 		"PLACARAGORA_TEST_EXPLAIN":   "FALSE",
+		"PLACARAGORA_APIKEY":         "NONE",
 	})
 
 	idmapResolved := core.ToMapAny(env["PLACARAGORA_TEST_SCHEDULE_ENTID"])
@@ -129,6 +130,7 @@ func scheduleBasicSetup(extra map[string]any) *entityTestSetup {
 	if env["PLACARAGORA_TEST_LIVE"] == "TRUE" {
 		mergedOpts := vs.Merge([]any{
 			map[string]any{
+				"apikey": env["PLACARAGORA_APIKEY"],
 			},
 			extra,
 		})

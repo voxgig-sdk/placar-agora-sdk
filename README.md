@@ -1,20 +1,8 @@
 # PlacarAgora SDK
 
-Live scores, final results, and upcoming fixtures for Brazilian football
+Placar Agora client, generated from the OpenAPI spec.
 
 > TypeScript, Python, PHP, Golang, Ruby, Lua SDKs, a CLI, an interactive REPL, and an MCP server for AI agents — all generated from one OpenAPI spec by [@voxgig/sdkgen](https://github.com/voxgig/sdkgen).
-
-## About Placar Agora
-
-Placar Agora ("Score Now") is a Brazilian football (soccer) scores portal that surfaces live games, final results, and upcoming fixtures. The site is published in Portuguese under the [Placar Agora](https://golfeito.asamkt.com.br) brand and embeds live-score data feeds for match coverage.
-
-What you can pull from the API:
-
-- **Jogos ao vivo** — live, in-progress matches
-- **Resultados finais** — completed match results
-- **Próximos jogos** — scheduled upcoming fixtures
-
-The upstream public listing references a competitions endpoint backed by `api.football-data.org/v4/competitions/`, suggesting football-data.org style competition data underneath. Authentication requirements, rate limits, and licence terms are not published on the homepage, and CORS appears to be disabled at the server, so server-side use is the safer assumption.
 
 ## Try it
 
@@ -48,29 +36,31 @@ gem install placar-agora-sdk
 luarocks install placar-agora-sdk
 ```
 
-## 30-second quickstart
+## Quickstart
 
 ### TypeScript
 
 ```ts
 import { PlacarAgoraSDK } from 'placar-agora'
 
-const client = new PlacarAgoraSDK({})
+const client = new PlacarAgoraSDK({
+  apikey: process.env.PLACAR-AGORA_APIKEY,
+})
 
 // List all schedules
 const schedules = await client.Schedule().list()
+console.log(schedules.data)
 ```
 
-See the [TypeScript README](ts/README.md) for the
-full guide, or scroll down for the same example in other languages.
+See the [TypeScript README](ts/README.md) for the full guide.
 
-## What's in the box
+## Surfaces
 
-| Surface | Use it for | Path |
-| --- | --- | --- |
-| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | App integration | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
-| **CLI** | Scripts, CI, ops, one-off API calls | `go-cli/` |
-| **MCP server** | AI agents (Claude, Cursor, Cline) | `go-mcp/` |
+| Surface | Path |
+| --- | --- |
+| **SDK** (TypeScript, Python, PHP, Golang, Ruby, Lua) | `ts/` `py/` `php/` `go/` `rb/` `lua/` |
+| **CLI** | `go-cli/` |
+| **MCP server** | `go-mcp/` |
 
 ## Use it from an AI agent (MCP)
 
@@ -100,8 +90,8 @@ The API exposes 2 entities:
 
 | Entity | Description | API path |
 | --- | --- | --- |
-| **Schedule** | Upcoming football fixtures — the "Próximos jogos" feed listing scheduled matches. | `/api/upcoming-games` |
-| **Score** | Live and final match scores — the "Jogos ao vivo" and "Resultados finais" feeds. | `/api/final-results` |
+| **Schedule** |  | `/api/upcoming-games` |
+| **Score** |  | `/api/final-results` |
 
 Each entity supports the following operations where available: **load**,
 **list**, **create**, **update**, and **remove**.
@@ -111,12 +101,16 @@ Each entity supports the following operations where available: **load**,
 ### Python
 
 ```python
+import os
 from placaragora_sdk import PlacarAgoraSDK
 
-client = PlacarAgoraSDK({})
+client = PlacarAgoraSDK({
+    "apikey": os.environ.get("PLACAR-AGORA_APIKEY"),
+})
 
 # List all schedules
-schedules, err = client.Schedule(None).list(None, None)
+schedules, err = client.Schedule().list()
+print(schedules)
 ```
 
 ### PHP
@@ -125,10 +119,13 @@ schedules, err = client.Schedule(None).list(None, None)
 <?php
 require_once 'placaragora_sdk.php';
 
-$client = new PlacarAgoraSDK([]);
+$client = new PlacarAgoraSDK([
+    "apikey" => getenv("PLACAR-AGORA_APIKEY"),
+]);
 
 // List all schedules
-[$schedules, $err] = $client->Schedule(null)->list(null, null);
+[$schedules, $err] = $client->Schedule()->list();
+print_r($schedules);
 ```
 
 ### Golang
@@ -136,10 +133,13 @@ $client = new PlacarAgoraSDK([]);
 ```go
 import sdk "github.com/voxgig-sdk/placar-agora-sdk/go"
 
-client := sdk.NewPlacarAgoraSDK(map[string]any{})
+client := sdk.NewPlacarAgoraSDK(map[string]any{
+    "apikey": os.Getenv("PLACAR-AGORA_APIKEY"),
+})
 
 // List all schedules
 schedules, err := client.Schedule(nil).List(nil, nil)
+fmt.Println(schedules)
 ```
 
 ### Ruby
@@ -147,10 +147,13 @@ schedules, err := client.Schedule(nil).List(nil, nil)
 ```ruby
 require_relative "PlacarAgora_sdk"
 
-client = PlacarAgoraSDK.new({})
+client = PlacarAgoraSDK.new({
+  "apikey" => ENV["PLACAR-AGORA_APIKEY"],
+})
 
 # List all schedules
-schedules, err = client.Schedule(nil).list(nil, nil)
+schedules, err = client.Schedule().list
+puts schedules
 ```
 
 ### Lua
@@ -158,10 +161,13 @@ schedules, err = client.Schedule(nil).list(nil, nil)
 ```lua
 local sdk = require("placar-agora_sdk")
 
-local client = sdk.new({})
+local client = sdk.new({
+  apikey = os.getenv("PLACAR-AGORA_APIKEY"),
+})
 
 -- List all schedules
-local schedules, err = client:Schedule(nil):list(nil, nil)
+local schedules, err = client:Schedule():list()
+print(schedules)
 ```
 
 ## Unit testing in offline mode
@@ -180,25 +186,21 @@ const result = await client.Schedule().load({ id: 'test01' })
 ### Python
 
 ```python
-client = PlacarAgoraSDK.test(None, None)
-result, err = client.Schedule(None).load(
-    {"id": "test01"}, None
-)
+client = PlacarAgoraSDK.test()
+result, err = client.Schedule().load({"id": "test01"})
 ```
 
 ### PHP
 
 ```php
-$client = PlacarAgoraSDK::test(null, null);
-[$result, $err] = $client->Schedule(null)->load(
-    ["id" => "test01"], null
-);
+$client = PlacarAgoraSDK::test();
+[$result, $err] = $client->Schedule()->load(["id" => "test01"]);
 ```
 
 ### Golang
 
 ```go
-client := sdk.TestSDK(nil, nil)
+client := sdk.Test()
 result, err := client.Schedule(nil).Load(
     map[string]any{"id": "test01"}, nil,
 )
@@ -207,19 +209,15 @@ result, err := client.Schedule(nil).Load(
 ### Ruby
 
 ```ruby
-client = PlacarAgoraSDK.test(nil, nil)
-result, err = client.Schedule(nil).load(
-  { "id" => "test01" }, nil
-)
+client = PlacarAgoraSDK.test
+result, err = client.Schedule().load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
-local client = sdk.test(nil, nil)
-local result, err = client:Schedule(nil):load(
-  { id = "test01" }, nil
-)
+local client = sdk.test()
+local result, err = client:Schedule():load({ id = "test01" })
 ```
 
 ## How it works
@@ -323,10 +321,6 @@ local result, err = client:direct({
 - [Golang](go/README.md)
 - [Ruby](rb/README.md)
 - [Lua](lua/README.md)
-
-## Using the Placar Agora
-
-- Upstream: [https://golfeito.asamkt.com.br](https://golfeito.asamkt.com.br)
 
 ---
 

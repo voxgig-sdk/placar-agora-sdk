@@ -68,12 +68,14 @@ function schedule_direct_setup($mockres)
     $env = Runner::env_override([
         "PLACARAGORA_TEST_SCHEDULE_ENTID" => [],
         "PLACARAGORA_TEST_LIVE" => "FALSE",
+        "PLACARAGORA_APIKEY" => "NONE",
     ]);
 
     $live = $env["PLACARAGORA_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [
+            "apikey" => $env["PLACARAGORA_APIKEY"],
         ];
         $client = new PlacarAgoraSDK($merged_opts);
         return [
