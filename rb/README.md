@@ -10,13 +10,13 @@ The Ruby SDK for the PlacarAgora API — an entity-oriented client using idiomat
 
 ## Install
 ```bash
-gem install placar-agora-sdk
+gem install voxgig-sdk-placar-agora
 ```
 
 Or add to your `Gemfile`:
 
 ```ruby
-gem "placar-agora-sdk"
+gem "voxgig-sdk-placar-agora"
 ```
 
 Then run:

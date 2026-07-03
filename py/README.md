@@ -10,7 +10,7 @@ The Python SDK for the PlacarAgora API — an entity-oriented client following P
 
 ## Install
 ```bash
-pip install placar-agora-sdk
+pip install voxgig-sdk-placar-agora
 ```
 
 Or install from source:

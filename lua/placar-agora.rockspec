@@ -8,12 +8,14 @@ source = {
   dir = "placar-agora-sdk/lua"
 }
 description = {
-  summary = "PlacarAgora SDK for Lua",
-  license = "MIT"
+  summary = "Unofficial generated Lua SDK for the Placar Agora public API. Not affiliated with or endorsed by the upstream API provider.",
+  homepage = "https://github.com/voxgig-sdk/placar-agora-sdk",
+  issues_url = "https://github.com/voxgig-sdk/placar-agora-sdk/issues",
+  license = "MIT",
+  labels = { "voxgig", "sdk", "generated-sdk", "openapi", "api-client", "placar-agora" }
 }
 dependencies = {
   "lua >= 5.3",
-  "dkjson >= 2.5",
   "dkjson >= 2.5",
 }
 build = {

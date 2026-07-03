@@ -10,7 +10,7 @@ The TypeScript SDK for the PlacarAgora API — a type-safe, entity-oriented clie
 
 ## Install
 ```bash
-npm install placar-agora
+npm install @voxgig-sdk/placar-agora
 ```
 ## Tutorial: your first API call
 

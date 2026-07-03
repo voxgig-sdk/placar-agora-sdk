@@ -10,7 +10,7 @@ The PHP SDK for the PlacarAgora API — an entity-oriented client using PHP conv
 
 ## Install
 ```bash
-composer require voxgig/placar-agora-sdk
+composer require voxgig-sdk/placar-agora
 ```
 
 
