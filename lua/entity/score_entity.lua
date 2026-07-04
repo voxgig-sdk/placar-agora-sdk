@@ -81,6 +81,10 @@ end
 
 
 
+---@param reqmatch ScoreListMatch
+---@param ctrl? table
+---@return Score[]
+---@return string? err
 function ScoreEntity:list(reqmatch, ctrl)
   local utility = self._utility
   local ctx = utility.make_context({

@@ -79,14 +79,12 @@ function directSetup(mockres?: any) {
   const env = envOverride({
     'PLACARAGORA_TEST_SCORE_ENTID': {},
     'PLACARAGORA_TEST_LIVE': 'FALSE',
-    'PLACARAGORA_APIKEY': 'NONE',
   })
 
   const live = 'TRUE' === env.PLACARAGORA_TEST_LIVE
 
   if (live) {
     const client = new PlacarAgoraSDK({
-      apikey: env.PLACARAGORA_APIKEY,
     })
 
     let idmap: any = env['PLACARAGORA_TEST_SCORE_ENTID']

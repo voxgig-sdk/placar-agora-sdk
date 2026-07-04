@@ -14,9 +14,13 @@ import type {
   Control,
 } from '../types'
 
+import type {
+  Score,
+  ScoreListMatch,
+} from '../PlacarAgoraTypes'
 
 // TODO: needs Entity superclass
-class ScoreEntity extends PlacarAgoraEntityBase {
+class ScoreEntity extends PlacarAgoraEntityBase<Score> {
 
   constructor(client: PlacarAgoraSDK, entopts: any) {
     super(client, entopts)
@@ -33,7 +37,7 @@ class ScoreEntity extends PlacarAgoraEntityBase {
 
 
 
-  async list(this: any, reqmatch?: any, ctrl?: Control) {
+  async list(this: any, reqmatch?: ScoreListMatch, ctrl?: Control): Promise<Score[]> {
 
     const utility = this._utility
 
@@ -133,7 +137,9 @@ class ScoreEntity extends PlacarAgoraEntityBase {
         throw err
       }
       else {
-        return undefined
+        // Off-happy-path (throw disabled): typed as any so the method's
+        // Promise<Score[]> return stays clean under strict null checks.
+        return undefined as any
       }
     }
   }

@@ -1,0 +1,105 @@
+// Typed models for the PlacarAgora SDK.
+//
+// GENERATED from the API model: main.kit.entity.<e>.fields[] and per-op
+// params (op.<name>.points[].args.params[]). Field/param types come from the
+// canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
+// @voxgig/apidef VALID_CANON). Do not edit by hand.
+package entity
+
+import "encoding/json"
+
+// Schedule is the typed data model for the schedule entity.
+type Schedule struct {
+	AwayTeam *map[string]any `json:"away_team,omitempty"`
+	Competition *string `json:"competition,omitempty"`
+	HomeTeam *map[string]any `json:"home_team,omitempty"`
+	MatchId *string `json:"match_id,omitempty"`
+	ScheduledTime *string `json:"scheduled_time,omitempty"`
+	Sport *string `json:"sport,omitempty"`
+	Status *string `json:"status,omitempty"`
+	Venue *string `json:"venue,omitempty"`
+}
+
+// ScheduleListMatch mirrors the schedule fields as an all-optional match
+// filter (Go analog of Partial<Schedule>).
+type ScheduleListMatch struct {
+	AwayTeam *map[string]any `json:"away_team,omitempty"`
+	Competition *string `json:"competition,omitempty"`
+	HomeTeam *map[string]any `json:"home_team,omitempty"`
+	MatchId *string `json:"match_id,omitempty"`
+	ScheduledTime *string `json:"scheduled_time,omitempty"`
+	Sport *string `json:"sport,omitempty"`
+	Status *string `json:"status,omitempty"`
+	Venue *string `json:"venue,omitempty"`
+}
+
+// Score is the typed data model for the score entity.
+type Score struct {
+	AwayTeam *map[string]any `json:"away_team,omitempty"`
+	Competition *string `json:"competition,omitempty"`
+	HomeTeam *map[string]any `json:"home_team,omitempty"`
+	MatchDate *string `json:"match_date,omitempty"`
+	MatchId *string `json:"match_id,omitempty"`
+	Minute *string `json:"minute,omitempty"`
+	Sport *string `json:"sport,omitempty"`
+	StartTime *string `json:"start_time,omitempty"`
+	Status *string `json:"status,omitempty"`
+}
+
+// ScoreListMatch mirrors the score fields as an all-optional match
+// filter (Go analog of Partial<Score>).
+type ScoreListMatch struct {
+	AwayTeam *map[string]any `json:"away_team,omitempty"`
+	Competition *string `json:"competition,omitempty"`
+	HomeTeam *map[string]any `json:"home_team,omitempty"`
+	MatchDate *string `json:"match_date,omitempty"`
+	MatchId *string `json:"match_id,omitempty"`
+	Minute *string `json:"minute,omitempty"`
+	Sport *string `json:"sport,omitempty"`
+	StartTime *string `json:"start_time,omitempty"`
+	Status *string `json:"status,omitempty"`
+}
+
+// asMap turns a typed request/data struct into the map[string]any the
+// runtime op pipeline consumes, honouring the json tags above.
+func asMap(v any) map[string]any {
+	out := map[string]any{}
+	b, err := json.Marshal(v)
+	if err != nil {
+		return out
+	}
+	_ = json.Unmarshal(b, &out)
+	return out
+}
+
+// typedFrom decodes a runtime value (a map[string]any produced by the op
+// pipeline) into a typed model T via a JSON round-trip. On any error it
+// returns the zero value of T; the op's own (value, error) tuple carries the
+// real error.
+func typedFrom[T any](v any) T {
+	var out T
+	if v == nil {
+		return out
+	}
+	b, err := json.Marshal(v)
+	if err != nil {
+		return out
+	}
+	_ = json.Unmarshal(b, &out)
+	return out
+}
+
+// typedSliceFrom decodes a runtime list value ([]any of maps) into a typed
+// slice []T via a JSON round-trip, for list ops.
+func typedSliceFrom[T any](v any) []T {
+	var out []T
+	if v == nil {
+		return out
+	}
+	b, err := json.Marshal(v)
+	if err != nil {
+		return out
+	}
+	_ = json.Unmarshal(b, &out)
+	return out
+}

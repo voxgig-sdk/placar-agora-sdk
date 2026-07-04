@@ -50,8 +50,7 @@ class ScoreEntityTest extends TestCase
         $score_ref01_ent = $client->Score(null);
         $score_ref01_match = [];
 
-        [$score_ref01_list_result, $err] = $score_ref01_ent->list($score_ref01_match, null);
-        $this->assertNull($err);
+        $score_ref01_list_result = $score_ref01_ent->list($score_ref01_match, null);
         $this->assertIsArray($score_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function score_basic_setup($extra)
         "PLACARAGORA_TEST_SCORE_ENTID" => $idmap,
         "PLACARAGORA_TEST_LIVE" => "FALSE",
         "PLACARAGORA_TEST_EXPLAIN" => "FALSE",
-        "PLACARAGORA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function score_basic_setup($extra)
     if ($env["PLACARAGORA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["PLACARAGORA_APIKEY"],
             ],
             $extra ?? [],
         ]);

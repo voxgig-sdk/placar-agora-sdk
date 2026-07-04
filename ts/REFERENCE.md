@@ -18,7 +18,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `object` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -122,7 +121,7 @@ Alias for `PlacarAgoraSDK.test()`.
 ## ScheduleEntity
 
 ```ts
-const schedule = client.Schedule()
+const schedule = client.schedule
 ```
 
 ### Fields
@@ -145,7 +144,7 @@ const schedule = client.Schedule()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Schedule().list()
+const results = await client.schedule.list()
 ```
 
 ### Common Methods
@@ -179,7 +178,7 @@ Return a copy of the entity options.
 ## ScoreEntity
 
 ```ts
-const score = client.Score()
+const score = client.score
 ```
 
 ### Fields
@@ -203,7 +202,7 @@ const score = client.Score()
 List entities matching the given criteria. Returns an array.
 
 ```ts
-const results = await client.Score().list()
+const results = await client.score.list()
 ```
 
 ### Common Methods

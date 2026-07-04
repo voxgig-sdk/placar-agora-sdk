@@ -9,9 +9,12 @@ The TypeScript SDK for the PlacarAgora API — a type-safe, entity-oriented clie
 
 
 ## Install
-```bash
-npm install @voxgig-sdk/placar-agora
-```
+This package is not yet published to npm. Install it from the GitHub
+release tag (`ts/vX.Y.Z`):
+
+- Releases: [https://github.com/voxgig-sdk/placar-agora-sdk/releases](https://github.com/voxgig-sdk/placar-agora-sdk/releases)
+
+
 ## Tutorial: your first API call
 
 This tutorial walks through creating a client, listing entities, and
@@ -20,17 +23,15 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { PlacarAgoraSDK } from 'placar-agora'
+import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora'
 
-const client = new PlacarAgoraSDK({
-  apikey: process.env.PLACAR-AGORA_APIKEY,
-})
+const client = new PlacarAgoraSDK()
 ```
 
 ### 2. List schedules
 
 ```ts
-const result = await client.Schedule().list()
+const result = await client.schedule.list()
 
 if (result.ok) {
   for (const item of result.data) {
@@ -81,7 +82,7 @@ Create a mock client for unit testing — no server required:
 ```ts
 const client = PlacarAgoraSDK.test()
 
-const result = await client.Planet().load({ id: 'test01' })
+const result = await client.schedule.load({ id: 'test01' })
 // result.ok === true
 // result.data contains mock response data
 ```
@@ -89,7 +90,7 @@ const result = await client.Planet().load({ id: 'test01' })
 You can also use the instance method:
 
 ```ts
-const client = new PlacarAgoraSDK({ apikey: '...' })
+const client = new PlacarAgoraSDK()
 const testClient = client.tester()
 ```
 
@@ -98,7 +99,7 @@ const testClient = client.tester()
 Entity instances remember their last match and data:
 
 ```ts
-const entity = client.Planet()
+const entity = client.schedule
 
 // First call sets internal match
 await entity.load({ id: 'example' })
@@ -125,7 +126,6 @@ const logger = {
 }
 
 const client = new PlacarAgoraSDK({
-  apikey: '...',
   extend: [logger],
 })
 ```
@@ -135,8 +135,7 @@ const client = new PlacarAgoraSDK({
 Create a `.env.local` file at the project root:
 
 ```
-PLACAR-AGORA_TEST_LIVE=TRUE
-PLACAR-AGORA_APIKEY=<your-key>
+PLACAR_AGORA_TEST_LIVE=TRUE
 ```
 
 Then run:
@@ -154,7 +153,6 @@ cd ts && npm test
 
 ```ts
 new PlacarAgoraSDK(options?: {
-  apikey?: string
   base?: string
   prefix?: string
   suffix?: string
@@ -165,7 +163,6 @@ new PlacarAgoraSDK(options?: {
 
 | Option | Type | Description |
 | --- | --- | --- |
-| `apikey` | `string` | API key for authentication. |
 | `base` | `string` | Base URL of the API server. |
 | `prefix` | `string` | URL path prefix prepended to all requests. |
 | `suffix` | `string` | URL path suffix appended to all requests. |
@@ -294,7 +291,7 @@ API path: `/api/final-results`
 
 ### Schedule
 
-Create an instance: `const schedule = client.Schedule()`
+Create an instance: `const schedule = client.schedule`
 
 #### Operations
 
@@ -318,13 +315,13 @@ Create an instance: `const schedule = client.Schedule()`
 #### Example: List
 
 ```ts
-const schedules = await client.Schedule().list()
+const schedules = await client.schedule.list()
 ```
 
 
 ### Score
 
-Create an instance: `const score = client.Score()`
+Create an instance: `const score = client.score`
 
 #### Operations
 
@@ -349,7 +346,7 @@ Create an instance: `const score = client.Score()`
 #### Example: List
 
 ```ts
-const scores = await client.Score().list()
+const scores = await client.score.list()
 ```
 
 
@@ -410,7 +407,7 @@ placar-agora/
 Import the SDK from the package root:
 
 ```ts
-import { PlacarAgoraSDK } from 'placar-agora'
+import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora'
 ```
 
 ### Entity state
@@ -420,11 +417,11 @@ stores the returned data and match criteria internally. Subsequent
 calls on the same instance can rely on this state.
 
 ```ts
-const moon = client.Moon()
-await moon.load({ planet_id: 'earth', id: 'luna' })
+const schedule = client.schedule
+await schedule.load({ id: "example_id" })
 
-// moon.data() now returns the loaded moon data
-// moon.match() returns { planet_id: 'earth', id: 'luna' }
+// schedule.data() now returns the loaded schedule data
+// schedule.match() returns { id: "example_id" }
 ```
 
 Call `make()` to create a fresh instance with the same configuration

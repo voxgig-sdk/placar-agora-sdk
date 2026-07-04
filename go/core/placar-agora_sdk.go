@@ -245,11 +245,17 @@ func (sdk *PlacarAgoraSDK) Direct(fetchargs map[string]any) (map[string]any, err
 }
 
 
+// Schedule returns a Schedule entity bound to this client.
+// Idiomatic usage: client.Schedule(nil).List(nil, nil) or
+// client.Schedule(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *PlacarAgoraSDK) Schedule(data map[string]any) PlacarAgoraEntity {
 	return NewScheduleEntityFunc(sdk, data)
 }
 
 
+// Score returns a Score entity bound to this client.
+// Idiomatic usage: client.Score(nil).List(nil, nil) or
+// client.Score(nil).Load(map[string]any{"id": ...}, nil).
 func (sdk *PlacarAgoraSDK) Score(data map[string]any) PlacarAgoraEntity {
 	return NewScoreEntityFunc(sdk, data)
 }

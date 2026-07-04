@@ -43,8 +43,7 @@ class ScoreEntityTest < Minitest::Test
     score_ref01_ent = client.Score(nil)
     score_ref01_match = {}
 
-    score_ref01_list_result, err = score_ref01_ent.list(score_ref01_match, nil)
-    assert_nil err
+    score_ref01_list_result = score_ref01_ent.list(score_ref01_match, nil)
     assert score_ref01_list_result.is_a?(Array)
 
   end
@@ -83,7 +82,6 @@ def score_basic_setup(extra)
     "PLACARAGORA_TEST_SCORE_ENTID" => idmap,
     "PLACARAGORA_TEST_LIVE" => "FALSE",
     "PLACARAGORA_TEST_EXPLAIN" => "FALSE",
-    "PLACARAGORA_APIKEY" => "NONE",
   })
 
   idmap_resolved = Helpers.to_map(
@@ -95,7 +93,6 @@ def score_basic_setup(extra)
   if env["PLACARAGORA_TEST_LIVE"] == "TRUE"
     merged_opts = Vs.merge([
       {
-        "apikey" => env["PLACARAGORA_APIKEY"],
       },
       extra || {},
     ])

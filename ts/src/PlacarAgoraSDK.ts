@@ -3,6 +3,8 @@
 import { ScheduleEntity } from './entity/ScheduleEntity'
 import { ScoreEntity } from './entity/ScoreEntity'
 
+export type * from './PlacarAgoraTypes'
+
 
 import { inspect } from 'node:util'
 
@@ -203,12 +205,28 @@ class PlacarAgoraSDK {
 
 
 
+  _schedule?: ScheduleEntity
+
+  // Idiomatic facade: `client.schedule.list()` / `client.schedule.load({ id })`.
+  get schedule(): ScheduleEntity {
+    return (this._schedule ??= new ScheduleEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.schedule` instead. */
   Schedule(data?: any) {
     const self = this
     return new ScheduleEntity(self,data)
   }
 
 
+  _score?: ScoreEntity
+
+  // Idiomatic facade: `client.score.list()` / `client.score.load({ id })`.
+  get score(): ScoreEntity {
+    return (this._score ??= new ScoreEntity(this, undefined))
+  }
+
+  /** @deprecated Use `client.score` instead. */
   Score(data?: any) {
     const self = this
     return new ScoreEntity(self,data)

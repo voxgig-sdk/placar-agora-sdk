@@ -93,14 +93,12 @@ func scheduleDirectSetup(mockres any) *scheduleDirectSetupResult {
 	env := envOverride(map[string]any{
 		"PLACARAGORA_TEST_SCHEDULE_ENTID": map[string]any{},
 		"PLACARAGORA_TEST_LIVE":    "FALSE",
-		"PLACARAGORA_APIKEY":       "NONE",
 	})
 
 	live := env["PLACARAGORA_TEST_LIVE"] == "TRUE"
 
 	if live {
 		mergedOpts := map[string]any{
-			"apikey": env["PLACARAGORA_APIKEY"],
 		}
 		client := sdk.NewPlacarAgoraSDK(mergedOpts)
 

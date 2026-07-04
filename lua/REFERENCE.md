@@ -19,7 +19,6 @@ Create a new SDK client instance.
 | Name | Type | Description |
 | --- | --- | --- |
 | `options` | `table` | SDK configuration options. |
-| `options.apikey` | `string` | API key for authentication. |
 | `options.base` | `string` | Base URL for API requests. |
 | `options.prefix` | `string` | URL prefix appended after base. |
 | `options.suffix` | `string` | URL suffix appended after path. |
@@ -88,7 +87,7 @@ same parameters as `direct()`.
 ## ScheduleEntity
 
 ```lua
-local schedule = client:Schedule(nil)
+local schedule = client:schedule(nil)
 ```
 
 ### Fields
@@ -111,7 +110,7 @@ local schedule = client:Schedule(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Schedule():list()
+local results, err = client:schedule():list()
 ```
 
 ### Common Methods
@@ -147,7 +146,7 @@ Return the entity name.
 ## ScoreEntity
 
 ```lua
-local score = client:Score(nil)
+local score = client:score(nil)
 ```
 
 ### Fields
@@ -171,7 +170,7 @@ local score = client:Score(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:Score():list()
+local results, err = client:score():list()
 ```
 
 ### Common Methods

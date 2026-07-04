@@ -50,8 +50,7 @@ class TestScoreEntity:
         score_ref01_ent = client.Score(None)
         score_ref01_match = {}
 
-        score_ref01_list_result, err = score_ref01_ent.list(score_ref01_match, None)
-        assert err is None
+        score_ref01_list_result = score_ref01_ent.list(score_ref01_match, None)
         assert isinstance(score_ref01_list_result, list)
 
 
@@ -92,7 +91,6 @@ def _score_basic_setup(extra):
         "PLACARAGORA_TEST_SCORE_ENTID": idmap,
         "PLACARAGORA_TEST_LIVE": "FALSE",
         "PLACARAGORA_TEST_EXPLAIN": "FALSE",
-        "PLACARAGORA_APIKEY": "NONE",
     })
 
     idmap_resolved = helpers.to_map(
@@ -103,7 +101,6 @@ def _score_basic_setup(extra):
     if env.get("PLACARAGORA_TEST_LIVE") == "TRUE":
         merged_opts = vs.merge([
             {
-                "apikey": env.get("PLACARAGORA_APIKEY"),
             },
             extra or {},
         ])

@@ -20,9 +20,6 @@ class PlacarAgoraConfig
             ],
             "options" => [
                 "base" => "https://golfeito.asamkt.com.br",
-                "auth" => [
-                    "prefix" => "Bearer",
-                ],
                 "headers" => [
           'content-type' => 'application/json',
         ],

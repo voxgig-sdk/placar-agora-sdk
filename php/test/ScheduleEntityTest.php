@@ -50,8 +50,7 @@ class ScheduleEntityTest extends TestCase
         $schedule_ref01_ent = $client->Schedule(null);
         $schedule_ref01_match = [];
 
-        [$schedule_ref01_list_result, $err] = $schedule_ref01_ent->list($schedule_ref01_match, null);
-        $this->assertNull($err);
+        $schedule_ref01_list_result = $schedule_ref01_ent->list($schedule_ref01_match, null);
         $this->assertIsArray($schedule_ref01_list_result);
 
     }
@@ -86,7 +85,6 @@ function schedule_basic_setup($extra)
         "PLACARAGORA_TEST_SCHEDULE_ENTID" => $idmap,
         "PLACARAGORA_TEST_LIVE" => "FALSE",
         "PLACARAGORA_TEST_EXPLAIN" => "FALSE",
-        "PLACARAGORA_APIKEY" => "NONE",
     ]);
 
     $idmap_resolved = Helpers::to_map(
@@ -98,7 +96,6 @@ function schedule_basic_setup($extra)
     if ($env["PLACARAGORA_TEST_LIVE"] === "TRUE") {
         $merged_opts = Vs::merge([
             [
-                "apikey" => $env["PLACARAGORA_APIKEY"],
             ],
             $extra ?? [],
         ]);
