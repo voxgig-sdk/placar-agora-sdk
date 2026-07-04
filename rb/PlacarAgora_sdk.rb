@@ -208,26 +208,14 @@ class PlacarAgoraSDK
   end
 
 
-  # Idiomatic facade: client.schedule.list / client.schedule.load({ "id" => ... })
-  def schedule
-    require_relative 'entity/schedule_entity'
-    @schedule ||= ScheduleEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.schedule instead.
+  # Canonical facade: client.Schedule.list / client.Schedule.load({ "id" => ... })
   def Schedule(data = nil)
     require_relative 'entity/schedule_entity'
     ScheduleEntity.new(self, data)
   end
 
 
-  # Idiomatic facade: client.score.list / client.score.load({ "id" => ... })
-  def score
-    require_relative 'entity/score_entity'
-    @score ||= ScoreEntity.new(self, nil)
-  end
-
-  # Deprecated: use client.score instead.
+  # Canonical facade: client.Score.list / client.Score.load({ "id" => ... })
   def Score(data = nil)
     require_relative 'entity/score_entity'
     ScoreEntity.new(self, data)

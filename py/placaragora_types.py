@@ -4,59 +4,59 @@
 # params (op.<name>.points[].args.params[]). Field/param types come from the
 # canonical type sentinels via @voxgig/sdkgen canonToType (source of truth:
 # @voxgig/apidef VALID_CANON). Do not edit by hand.
+#
+# These are TypedDicts, not dataclasses: the SDK ops return/accept plain dicts
+# at runtime, and a TypedDict IS a dict shape, so the types match the runtime.
+# Optional (req:false) keys are modelled as TypedDict key-optionality
+# (total=False), split into a required base + total=False subclass when a type
+# has both required and optional keys.
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Optional, Any
+from typing import TypedDict, Any
 
 
-@dataclass
-class Schedule:
-    away_team: Optional[dict] = None
-    competition: Optional[str] = None
-    home_team: Optional[dict] = None
-    match_id: Optional[str] = None
-    scheduled_time: Optional[str] = None
-    sport: Optional[str] = None
-    status: Optional[str] = None
-    venue: Optional[str] = None
+class Schedule(TypedDict, total=False):
+    away_team: dict
+    competition: str
+    home_team: dict
+    match_id: str
+    scheduled_time: str
+    sport: str
+    status: str
+    venue: str
 
 
-@dataclass
-class ScheduleListMatch:
-    away_team: Optional[dict] = None
-    competition: Optional[str] = None
-    home_team: Optional[dict] = None
-    match_id: Optional[str] = None
-    scheduled_time: Optional[str] = None
-    sport: Optional[str] = None
-    status: Optional[str] = None
-    venue: Optional[str] = None
+class ScheduleListMatch(TypedDict, total=False):
+    away_team: dict
+    competition: str
+    home_team: dict
+    match_id: str
+    scheduled_time: str
+    sport: str
+    status: str
+    venue: str
 
 
-@dataclass
-class Score:
-    away_team: Optional[dict] = None
-    competition: Optional[str] = None
-    home_team: Optional[dict] = None
-    match_date: Optional[str] = None
-    match_id: Optional[str] = None
-    minute: Optional[str] = None
-    sport: Optional[str] = None
-    start_time: Optional[str] = None
-    status: Optional[str] = None
+class Score(TypedDict, total=False):
+    away_team: dict
+    competition: str
+    home_team: dict
+    match_date: str
+    match_id: str
+    minute: str
+    sport: str
+    start_time: str
+    status: str
 
 
-@dataclass
-class ScoreListMatch:
-    away_team: Optional[dict] = None
-    competition: Optional[str] = None
-    home_team: Optional[dict] = None
-    match_date: Optional[str] = None
-    match_id: Optional[str] = None
-    minute: Optional[str] = None
-    sport: Optional[str] = None
-    start_time: Optional[str] = None
-    status: Optional[str] = None
-
+class ScoreListMatch(TypedDict, total=False):
+    away_team: dict
+    competition: str
+    home_team: dict
+    match_date: str
+    match_id: str
+    minute: str
+    sport: str
+    start_time: str
+    status: str

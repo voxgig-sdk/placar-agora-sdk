@@ -87,7 +87,7 @@ same parameters as `direct()`.
 ## ScheduleEntity
 
 ```lua
-local schedule = client:schedule(nil)
+local schedule = client:Schedule(nil)
 ```
 
 ### Fields
@@ -110,7 +110,7 @@ local schedule = client:schedule(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:schedule():list()
+local results, err = client:Schedule():list()
 ```
 
 ### Common Methods
@@ -146,7 +146,7 @@ Return the entity name.
 ## ScoreEntity
 
 ```lua
-local score = client:score(nil)
+local score = client:Score(nil)
 ```
 
 ### Fields
@@ -170,7 +170,7 @@ local score = client:score(nil)
 List entities matching the given criteria. Returns an array.
 
 ```lua
-local results, err = client:score():list()
+local results, err = client:Score():list()
 ```
 
 ### Common Methods

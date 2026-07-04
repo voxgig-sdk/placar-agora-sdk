@@ -233,10 +233,10 @@ class PlacarAgoraSDK
 
     private $_schedule = null;
 
-    // Idiomatic facade: $client->schedule()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Schedule() (PHP method
-    // names are case-insensitive).
-    public function schedule($data = null)
+    // Canonical facade: $client->Schedule()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->schedule()
+    // resolves here too.
+    public function Schedule($data = null)
     {
         require_once __DIR__ . '/entity/schedule_entity.php';
         if ($data === null) {
@@ -251,10 +251,10 @@ class PlacarAgoraSDK
 
     private $_score = null;
 
-    // Idiomatic facade: $client->score()->list() / ->load(["id" => ...]).
-    // Also serves the deprecated PascalCase alias Score() (PHP method
-    // names are case-insensitive).
-    public function score($data = null)
+    // Canonical facade: $client->Score()->list() / ->load(["id" => ...]).
+    // PHP method names are case-insensitive, so lowercase $client->score()
+    // resolves here too.
+    public function Score($data = null)
     {
         require_once __DIR__ . '/entity/score_entity.php';
         if ($data === null) {

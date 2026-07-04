@@ -89,7 +89,7 @@ Prepare a fetch definition without sending the request. Returns the
 ## ScheduleEntity
 
 ```php
-$schedule = $client->schedule();
+$schedule = $client->Schedule();
 ```
 
 ### Fields
@@ -112,7 +112,7 @@ $schedule = $client->schedule();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->schedule()->list([]);
+$results = $client->Schedule()->list([]);
 ```
 
 ### Common Methods
@@ -148,7 +148,7 @@ Return the entity name.
 ## ScoreEntity
 
 ```php
-$score = $client->score();
+$score = $client->Score();
 ```
 
 ### Fields
@@ -172,7 +172,7 @@ $score = $client->score();
 List entities matching the given criteria. Returns an array. Throws on error.
 
 ```php
-$results = $client->score()->list([]);
+$results = $client->Score()->list([]);
 ```
 
 ### Common Methods

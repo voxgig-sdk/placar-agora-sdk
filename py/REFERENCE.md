@@ -84,7 +84,7 @@ Prepare a fetch definition without sending. Returns the `fetchdef` and raises on
 ## ScheduleEntity
 
 ```python
-schedule = client.schedule
+schedule = client.Schedule()
 ```
 
 ### Fields
@@ -107,7 +107,9 @@ schedule = client.schedule
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.schedule.list({})
+results = client.Schedule().list({})
+for schedule in results:
+    print(schedule)
 ```
 
 ### Common Methods
@@ -142,7 +144,7 @@ Return the entity name.
 ## ScoreEntity
 
 ```python
-score = client.score
+score = client.Score()
 ```
 
 ### Fields
@@ -166,7 +168,9 @@ score = client.score
 List entities matching the given criteria. Returns a list and raises on error.
 
 ```python
-results = client.score.list({})
+results = client.Score().list({})
+for score in results:
+    print(score)
 ```
 
 ### Common Methods

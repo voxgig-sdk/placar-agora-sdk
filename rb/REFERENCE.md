@@ -90,7 +90,7 @@ same parameters as `direct()`. Raises on error.
 ## ScheduleEntity
 
 ```ruby
-schedule = client.schedule
+schedule = client.Schedule
 ```
 
 ### Fields
@@ -113,7 +113,7 @@ schedule = client.schedule
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.schedule.list(nil)
+results = client.Schedule.list(nil)
 ```
 
 ### Common Methods
@@ -149,7 +149,7 @@ Return the entity name.
 ## ScoreEntity
 
 ```ruby
-score = client.score
+score = client.Score
 ```
 
 ### Fields
@@ -173,7 +173,7 @@ score = client.score
 List entities matching the given criteria. Returns an array. Raises on error.
 
 ```ruby
-results = client.score.list(nil)
+results = client.Score.list(nil)
 ```
 
 ### Common Methods

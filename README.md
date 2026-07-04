@@ -26,9 +26,11 @@ import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora'
 
 const client = new PlacarAgoraSDK()
 
-// List all schedules
-const schedules = await client.schedule.list()
-console.log(schedules.data)
+// List all schedules (returns Schedule[])
+const schedules = await client.Schedule().list()
+for (const schedule of schedules) {
+  console.log(schedule)
+}
 ```
 
 See the [TypeScript README](ts/README.md) for the full guide.
@@ -84,9 +86,10 @@ from placaragora_sdk import PlacarAgoraSDK
 
 client = PlacarAgoraSDK()
 
-# List all schedules
-schedules = client.schedule.list()
-print(schedules)
+# List all schedules (returns a list, raises on error)
+schedules = client.Schedule().list({})
+for schedule in schedules:
+    print(schedule)
 ```
 
 ### PHP
@@ -97,8 +100,8 @@ require_once 'placaragora_sdk.php';
 
 $client = new PlacarAgoraSDK();
 
-// List all schedules (throws on error)
-$schedules = $client->schedule()->list();
+// List all schedules (returns an array; throws on error)
+$schedules = $client->Schedule()->list();
 print_r($schedules);
 ```
 
@@ -121,8 +124,8 @@ require_relative "PlacarAgora_sdk"
 
 client = PlacarAgoraSDK.new
 
-# List all schedules
-schedules = client.schedule.list
+# List all schedules (returns an Array; raises on error)
+schedules = client.Schedule.list
 puts schedules
 ```
 
@@ -134,7 +137,7 @@ local sdk = require("placar-agora_sdk")
 local client = sdk.new()
 
 -- List all schedules
-local schedules, err = client:schedule():list()
+local schedules, err = client:Schedule():list()
 print(schedules)
 ```
 
@@ -147,22 +150,27 @@ in-memory mock, so unit tests run offline.
 
 ```ts
 const client = PlacarAgoraSDK.test()
-const result = await client.schedule.load({ id: 'test01' })
-// result.ok === true, result.data contains mock data
+const schedule = await client.Schedule().load({ id: 'test01' })
+// schedule is a bare Schedule populated with mock data
+console.log(schedule)
 ```
 
 ### Python
 
 ```python
 client = PlacarAgoraSDK.test()
-result = client.schedule.load({"id": "test01"})
+schedule = client.Schedule().load({"id": "test01"})
+print(schedule)
 ```
 
 ### PHP
 
 ```php
-$client = PlacarAgoraSDK::test();
-$result = $client->schedule()->load(["id" => "test01"]);
+// Seed fixture data so offline calls resolve without a live server.
+$client = PlacarAgoraSDK::test([
+    "entity" => ["schedule" => ["test01" => ["id" => "test01"]]],
+]);
+$schedule = $client->Schedule()->load(["id" => "test01"]);
 ```
 
 ### Golang
@@ -177,15 +185,18 @@ result, err := client.Schedule(nil).Load(
 ### Ruby
 
 ```ruby
-client = PlacarAgoraSDK.test
-result = client.schedule.load({ "id" => "test01" })
+# Seed fixture data so offline calls resolve without a live server.
+client = PlacarAgoraSDK.test({
+  "entity" => { "schedule" => { "test01" => { "id" => "test01" } } },
+})
+schedule = client.Schedule.load({ "id" => "test01" })
 ```
 
 ### Lua
 
 ```lua
 local client = sdk.test()
-local result, err = client:schedule():load({ id = "test01" })
+local result, err = client:Schedule():load({ id = "test01" })
 ```
 
 ## How it works
@@ -233,6 +244,9 @@ const result = await client.direct({
   method: 'GET',
   params: { id: 'example' },
 })
+if (result instanceof Error) {
+  throw result
+}
 console.log(result.data)
 ```
 

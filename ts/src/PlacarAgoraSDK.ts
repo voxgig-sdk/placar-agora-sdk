@@ -205,28 +205,14 @@ class PlacarAgoraSDK {
 
 
 
-  _schedule?: ScheduleEntity
-
-  // Idiomatic facade: `client.schedule.list()` / `client.schedule.load({ id })`.
-  get schedule(): ScheduleEntity {
-    return (this._schedule ??= new ScheduleEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.schedule` instead. */
+  // Entity access: `client.Schedule().list()` / `client.Schedule().load({ id })`.
   Schedule(data?: any) {
     const self = this
     return new ScheduleEntity(self,data)
   }
 
 
-  _score?: ScoreEntity
-
-  // Idiomatic facade: `client.score.list()` / `client.score.load({ id })`.
-  get score(): ScoreEntity {
-    return (this._score ??= new ScoreEntity(this, undefined))
-  }
-
-  /** @deprecated Use `client.score` instead. */
+  // Entity access: `client.Score().list()` / `client.Score().load({ id })`.
   Score(data?: any) {
     const self = this
     return new ScoreEntity(self,data)

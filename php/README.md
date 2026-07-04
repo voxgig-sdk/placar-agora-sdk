@@ -29,18 +29,16 @@ require_once 'placaragora_sdk.php';
 $client = new PlacarAgoraSDK();
 ```
 
-### 2. List schedules
+### 2. List schedule records
 
 ```php
 try {
-    $result = $client->schedule()->list();
-    if (is_array($result)) {
-        foreach ($result as $item) {
-            $d = $item->data_get();
-            echo $d["id"] . " " . $d["name"] . "\n";
-        }
+    // list() returns an array of Schedule records — iterate directly.
+    $schedules = $client->Schedule()->list();
+    foreach ($schedules as $item) {
+        echo $item["id"] . " " . $item["name"] . "\n";
     }
-} catch (\Exception $err) {
+} catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
 }
 ```
@@ -86,13 +84,17 @@ print_r($fetchdef["headers"]);
 
 ### Use test mode
 
-Create a mock client for unit testing — no server required:
+Create a mock client for unit testing — no server required. Seed fixture
+data via the `entity` option so offline calls resolve without a live server:
 
 ```php
-$client = PlacarAgoraSDK::test();
+$client = PlacarAgoraSDK::test([
+    "entity" => ["schedule" => ["test01" => ["id" => "test01"]]],
+]);
 
-$result = $client->schedule()->load(["id" => "test01"]);
-// $result contains mock response data
+// load() returns the bare mock record (throws on error).
+$schedule = $client->Schedule()->load(["id" => "test01"]);
+print_r($schedule);
 ```
 
 ### Use a custom fetch function
@@ -254,7 +256,7 @@ API path: `/api/final-results`
 
 ### Schedule
 
-Create an instance: `const schedule = client.schedule`
+Create an instance: `$schedule = $client->Schedule();`
 
 #### Operations
 
@@ -277,14 +279,15 @@ Create an instance: `const schedule = client.schedule`
 
 #### Example: List
 
-```ts
-const schedules = await client.schedule.list()
+```php
+// list() returns an array of Schedule records (throws on error).
+$schedules = $client->Schedule()->list();
 ```
 
 
 ### Score
 
-Create an instance: `const score = client.score`
+Create an instance: `$score = $client->Score();`
 
 #### Operations
 
@@ -308,8 +311,9 @@ Create an instance: `const score = client.score`
 
 #### Example: List
 
-```ts
-const scores = await client.score.list()
+```php
+// list() returns an array of Score records (throws on error).
+$scores = $client->Score()->list();
 ```
 
 
@@ -384,7 +388,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```php
-$schedule = $client->schedule();
+$schedule = $client->Schedule();
 $schedule->load(["id" => "example_id"]);
 
 // $schedule->dataGet() now returns the loaded schedule data

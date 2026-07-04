@@ -244,8 +244,9 @@ end
 
 
 
--- Idiomatic facade: client:schedule():list() / client:schedule():load({ id = ... })
-function PlacarAgoraSDK:schedule(data)
+-- Idiomatic facade: client:Schedule():list() / client:Schedule():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PlacarAgoraSDK:Schedule(data)
   local EntityMod = require("entity.schedule_entity")
   if data == nil then
     if self._schedule == nil then
@@ -256,15 +257,10 @@ function PlacarAgoraSDK:schedule(data)
   return EntityMod.new(self, data)
 end
 
--- Deprecated: use client:schedule() instead.
-function PlacarAgoraSDK:Schedule(data)
-  local EntityMod = require("entity.schedule_entity")
-  return EntityMod.new(self, data)
-end
 
-
--- Idiomatic facade: client:score():list() / client:score():load({ id = ... })
-function PlacarAgoraSDK:score(data)
+-- Idiomatic facade: client:Score():list() / client:Score():load({ id = ... })
+-- Entity access is capitalised (PascalCase) for parity with the other SDKs.
+function PlacarAgoraSDK:Score(data)
   local EntityMod = require("entity.score_entity")
   if data == nil then
     if self._score == nil then
@@ -272,12 +268,6 @@ function PlacarAgoraSDK:score(data)
     end
     return self._score
   end
-  return EntityMod.new(self, data)
-end
-
--- Deprecated: use client:score() instead.
-function PlacarAgoraSDK:Score(data)
-  local EntityMod = require("entity.score_entity")
   return EntityMod.new(self, data)
 end
 

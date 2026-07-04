@@ -31,14 +31,16 @@ from placaragora_sdk import PlacarAgoraSDK
 client = PlacarAgoraSDK()
 ```
 
-### 2. List schedules
+### 2. List schedule records
+
+`list()` returns a `list` of records (each a `dict`) and raises on
+error — iterate it directly.
 
 ```python
 try:
-    result = client.schedule.list()
-    for item in result:
-        d = item.data_get()
-        print(d["id"], d["name"])
+    schedules = client.Schedule().list({})
+    for schedule in schedules:
+        print(schedule)
 except Exception as err:
     print(f"list failed: {err}")
 ```
@@ -86,8 +88,9 @@ Create a mock client for unit testing — no server required:
 ```python
 client = PlacarAgoraSDK.test()
 
-result = client.schedule.load({"id": "test01"})
-# result contains mock response data
+# Entity ops return the bare record and raise on error.
+schedule = client.Schedule().load({"id": "test01"})
+# schedule contains the mock response record
 ```
 
 ### Use a custom fetch function
@@ -246,7 +249,7 @@ API path: `/api/final-results`
 
 ### Schedule
 
-Create an instance: `const schedule = client.schedule`
+Create an instance: `schedule = client.Schedule()`
 
 #### Operations
 
@@ -269,14 +272,14 @@ Create an instance: `const schedule = client.schedule`
 
 #### Example: List
 
-```ts
-const schedules = await client.schedule.list()
+```python
+schedules = client.Schedule().list({})
 ```
 
 
 ### Score
 
-Create an instance: `const score = client.score`
+Create an instance: `score = client.Score()`
 
 #### Operations
 
@@ -300,8 +303,8 @@ Create an instance: `const score = client.score`
 
 #### Example: List
 
-```ts
-const scores = await client.score.list()
+```python
+scores = client.Score().list({})
 ```
 
 
@@ -375,7 +378,7 @@ Entity instances are stateful. After a successful `load`, the entity
 stores the returned data and match criteria internally.
 
 ```python
-schedule = client.schedule
+schedule = client.Schedule()
 schedule.load({"id": "example_id"})
 
 # schedule.data_get() now returns the loaded schedule data
