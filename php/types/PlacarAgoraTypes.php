@@ -25,7 +25,7 @@ class Schedule
     public ?string $venue = null;
 }
 
-/** Match filter for Schedule#list (any subset of Schedule fields). */
+/** Request payload for Schedule#list. */
 class ScheduleListMatch
 {
     public ?array $away_team = null;
@@ -52,7 +52,7 @@ class Score
     public ?string $status = null;
 }
 
-/** Match filter for Score#list (any subset of Score fields). */
+/** Request payload for Score#list. */
 class ScoreListMatch
 {
     public ?array $away_team = null;

@@ -101,14 +101,14 @@ schedule := client.Schedule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `scheduled_time` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `venue` | ``$STRING`` | No |  |
+| `away_team` | `map[string]any` | No |  |
+| `competition` | `string` | No |  |
+| `home_team` | `map[string]any` | No |  |
+| `match_id` | `string` | No |  |
+| `scheduled_time` | `string` | No |  |
+| `sport` | `string` | No |  |
+| `status` | `string` | No |  |
+| `venue` | `string` | No |  |
 
 ### Operations
 
@@ -154,15 +154,15 @@ score := client.Score(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_date` | ``$STRING`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `minute` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `start_time` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `away_team` | `map[string]any` | No |  |
+| `competition` | `string` | No |  |
+| `home_team` | `map[string]any` | No |  |
+| `match_date` | `string` | No |  |
+| `match_id` | `string` | No |  |
+| `minute` | `string` | No |  |
+| `sport` | `string` | No |  |
+| `start_time` | `string` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 

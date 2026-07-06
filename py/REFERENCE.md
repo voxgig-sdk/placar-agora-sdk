@@ -8,7 +8,7 @@ Complete API reference for the PlacarAgora Python SDK.
 ### Constructor
 
 ```python
-from placar-agora_sdk import PlacarAgoraSDK
+from placaragora_sdk import PlacarAgoraSDK
 
 client = PlacarAgoraSDK(options)
 ```
@@ -91,23 +91,23 @@ schedule = client.Schedule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `scheduled_time` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `venue` | ``$STRING`` | No |  |
+| `away_team` | `dict` | No |  |
+| `competition` | `str` | No |  |
+| `home_team` | `dict` | No |  |
+| `match_id` | `str` | No |  |
+| `scheduled_time` | `str` | No |  |
+| `sport` | `str` | No |  |
+| `status` | `str` | No |  |
+| `venue` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Schedule().list({})
+results = client.Schedule().list()
 for schedule in results:
     print(schedule)
 ```
@@ -151,24 +151,24 @@ score = client.Score()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_date` | ``$STRING`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `minute` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `start_time` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `away_team` | `dict` | No |  |
+| `competition` | `str` | No |  |
+| `home_team` | `dict` | No |  |
+| `match_date` | `str` | No |  |
+| `match_id` | `str` | No |  |
+| `minute` | `str` | No |  |
+| `sport` | `str` | No |  |
+| `start_time` | `str` | No |  |
+| `status` | `str` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl=None) -> list`
+#### `list(reqmatch=None, ctrl=None) -> list`
 
-List entities matching the given criteria. Returns a list and raises on error.
+List entities matching the given criteria. The match is optional — call `list()` with no argument to list all records. Returns a list and raises on error.
 
 ```python
-results = client.Score().list({})
+results = client.Score().list()
 for score in results:
     print(score)
 ```

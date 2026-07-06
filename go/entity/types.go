@@ -20,8 +20,7 @@ type Schedule struct {
 	Venue *string `json:"venue,omitempty"`
 }
 
-// ScheduleListMatch mirrors the schedule fields as an all-optional match
-// filter (Go analog of Partial<Schedule>).
+// ScheduleListMatch is the typed request payload for Schedule.ListTyped.
 type ScheduleListMatch struct {
 	AwayTeam *map[string]any `json:"away_team,omitempty"`
 	Competition *string `json:"competition,omitempty"`
@@ -46,8 +45,7 @@ type Score struct {
 	Status *string `json:"status,omitempty"`
 }
 
-// ScoreListMatch mirrors the score fields as an all-optional match
-// filter (Go analog of Partial<Score>).
+// ScoreListMatch is the typed request payload for Score.ListTyped.
 type ScoreListMatch struct {
 	AwayTeam *map[string]any `json:"away_team,omitempty"`
 	Competition *string `json:"competition,omitempty"`

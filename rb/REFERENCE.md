@@ -8,7 +8,7 @@ Complete API reference for the PlacarAgora Ruby SDK.
 ### Constructor
 
 ```ruby
-require_relative 'placar-agora_sdk'
+require_relative 'PlacarAgora_sdk'
 
 client = PlacarAgoraSDK.new(options)
 ```
@@ -97,23 +97,23 @@ schedule = client.Schedule
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `scheduled_time` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `venue` | ``$STRING`` | No |  |
+| `away_team` | `Hash` | No |  |
+| `competition` | `String` | No |  |
+| `home_team` | `Hash` | No |  |
+| `match_id` | `String` | No |  |
+| `scheduled_time` | `String` | No |  |
+| `sport` | `String` | No |  |
+| `status` | `String` | No |  |
+| `venue` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Schedule.list(nil)
+results = client.Schedule.list
 ```
 
 ### Common Methods
@@ -156,24 +156,24 @@ score = client.Score
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_date` | ``$STRING`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `minute` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `start_time` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `away_team` | `Hash` | No |  |
+| `competition` | `String` | No |  |
+| `home_team` | `Hash` | No |  |
+| `match_date` | `String` | No |  |
+| `match_id` | `String` | No |  |
+| `minute` | `String` | No |  |
+| `sport` | `String` | No |  |
+| `start_time` | `String` | No |  |
+| `status` | `String` | No |  |
 
 ### Operations
 
-#### `list(reqmatch, ctrl = nil) -> Array`
+#### `list(reqmatch = nil, ctrl = nil) -> Array`
 
-List entities matching the given criteria. Returns an array. Raises on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Raises on error.
 
 ```ruby
-results = client.Score.list(nil)
+results = client.Score.list
 ```
 
 ### Common Methods

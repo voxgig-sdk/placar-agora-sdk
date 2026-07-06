@@ -8,7 +8,7 @@ Complete API reference for the PlacarAgora PHP SDK.
 ### Constructor
 
 ```php
-require_once __DIR__ . '/placar-agora_sdk.php';
+require_once __DIR__ . '/placaragora_sdk.php';
 
 $client = new PlacarAgoraSDK($options);
 ```
@@ -49,11 +49,11 @@ Create a new `ScheduleEntity` instance. Pass `null` for no initial data.
 
 Create a new `ScoreEntity` instance. Pass `null` for no initial data.
 
-#### `optionsMap(): array`
+#### `options_map(): array`
 
 Return a deep copy of the current SDK options.
 
-#### `getUtility(): ProjectNameUtility`
+#### `get_utility(): PlacarAgoraUtility`
 
 Return a copy of the SDK utility object.
 
@@ -96,40 +96,40 @@ $schedule = $client->Schedule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `scheduled_time` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
-| `venue` | ``$STRING`` | No |  |
+| `away_team` | `array` | No |  |
+| `competition` | `string` | No |  |
+| `home_team` | `array` | No |  |
+| `match_id` | `string` | No |  |
+| `scheduled_time` | `string` | No |  |
+| `sport` | `string` | No |  |
+| `status` | `string` | No |  |
+| `venue` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Schedule()->list([]);
+$results = $client->Schedule()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -138,7 +138,7 @@ Set the entity match criteria.
 Create a new `ScheduleEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 
@@ -155,41 +155,41 @@ $score = $client->Score();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | ``$OBJECT`` | No |  |
-| `competition` | ``$STRING`` | No |  |
-| `home_team` | ``$OBJECT`` | No |  |
-| `match_date` | ``$STRING`` | No |  |
-| `match_id` | ``$STRING`` | No |  |
-| `minute` | ``$STRING`` | No |  |
-| `sport` | ``$STRING`` | No |  |
-| `start_time` | ``$STRING`` | No |  |
-| `status` | ``$STRING`` | No |  |
+| `away_team` | `array` | No |  |
+| `competition` | `string` | No |  |
+| `home_team` | `array` | No |  |
+| `match_date` | `string` | No |  |
+| `match_id` | `string` | No |  |
+| `minute` | `string` | No |  |
+| `sport` | `string` | No |  |
+| `start_time` | `string` | No |  |
+| `status` | `string` | No |  |
 
 ### Operations
 
-#### `list(array $reqmatch, ?array $ctrl = null): mixed`
+#### `list(?array $reqmatch = null, ?array $ctrl = null): mixed`
 
-List entities matching the given criteria. Returns an array. Throws on error.
+List entities matching the given criteria (call with no argument to list all). Returns an array. Throws on error.
 
 ```php
-$results = $client->Score()->list([]);
+$results = $client->Score()->list();
 ```
 
 ### Common Methods
 
-#### `dataGet(): array`
+#### `data_get(): array`
 
 Get the entity data. Returns a copy of the current data.
 
-#### `dataSet($data): void`
+#### `data_set($data): void`
 
 Set the entity data.
 
-#### `matchGet(): array`
+#### `match_get(): array`
 
 Get the entity match criteria.
 
-#### `matchSet($match): void`
+#### `match_set($match): void`
 
 Set the entity match criteria.
 
@@ -198,7 +198,7 @@ Set the entity match criteria.
 Create a new `ScoreEntity` instance with the same client and
 options.
 
-#### `getName(): string`
+#### `get_name(): string`
 
 Return the entity name.
 

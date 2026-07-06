@@ -45,7 +45,7 @@ Schedule = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Schedule#list (any subset of Schedule fields).
+# Request payload for Schedule#list.
 #
 # @!attribute [rw] away_team
 #   @return [Hash, nil]
@@ -123,7 +123,7 @@ Score = Struct.new(
   keyword_init: true
 )
 
-# Match filter for Score#list (any subset of Score fields).
+# Request payload for Score#list.
 #
 # @!attribute [rw] away_team
 #   @return [Hash, nil]

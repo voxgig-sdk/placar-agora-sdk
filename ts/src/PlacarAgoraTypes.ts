@@ -16,7 +16,16 @@ export interface Schedule {
   venue?: string
 }
 
-export type ScheduleListMatch = Partial<Schedule>
+export interface ScheduleListMatch {
+  away_team?: Record<string, any>
+  competition?: string
+  home_team?: Record<string, any>
+  match_id?: string
+  scheduled_time?: string
+  sport?: string
+  status?: string
+  venue?: string
+}
 
 export interface Score {
   away_team?: Record<string, any>
@@ -30,5 +39,15 @@ export interface Score {
   status?: string
 }
 
-export type ScoreListMatch = Partial<Score>
+export interface ScoreListMatch {
+  away_team?: Record<string, any>
+  competition?: string
+  home_team?: Record<string, any>
+  match_date?: string
+  match_id?: string
+  minute?: string
+  sport?: string
+  start_time?: string
+  status?: string
+}
 

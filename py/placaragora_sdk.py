@@ -221,13 +221,13 @@ class PlacarAgoraSDK:
 
 
     def Schedule(self, data=None) -> "ScheduleEntity":
-        """Entity factory: client.Schedule().list({}) / client.Schedule().load({"id": ...})."""
+        """Entity factory: client.Schedule().list() / client.Schedule().load({"id": ...})."""
         from entity.schedule_entity import ScheduleEntity
         return ScheduleEntity(self, data)
 
 
     def Score(self, data=None) -> "ScoreEntity":
-        """Entity factory: client.Score().list({}) / client.Score().load({"id": ...})."""
+        """Entity factory: client.Score().list() / client.Score().load({"id": ...})."""
         from entity.score_entity import ScoreEntity
         return ScoreEntity(self, data)
 
