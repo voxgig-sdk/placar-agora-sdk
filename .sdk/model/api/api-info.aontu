@@ -15,9 +15,9 @@ main: {
           url: "https://golfeito.asamkt.com.br"
         }
       ]
+      summary: "Placar Agora provides live scores, final results, and upcoming game schedules for sports enthusiasts."
       title: "Placar Agora"
       version: "1.0.0"
+      website: "https://golfeito.asamkt.com.br"
     }
   }
-}
-
