@@ -1,4 +1,4 @@
--- ProjectName SDK exists test
+-- PlacarAgora SDK exists test
 
 local sdk = require("placar-agora_sdk")
 
