@@ -27,7 +27,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "away_team",
+						"name": "awayTeam",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 0,
@@ -41,21 +41,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "home_team",
+						"name": "homeTeam",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 2,
 					},
 					map[string]any{
 						"active": true,
-						"name": "match_id",
+						"name": "matchId",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 3,
 					},
 					map[string]any{
 						"active": true,
-						"name": "scheduled_time",
+						"name": "scheduledTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 4,
@@ -118,6 +118,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/upcoming-games",
 								"parts": []any{
@@ -133,12 +134,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.matches`",
 								},
 								"index$": 0,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{
@@ -149,7 +149,7 @@ func MakeConfig() map[string]any {
 				"fields": []any{
 					map[string]any{
 						"active": true,
-						"name": "away_team",
+						"name": "awayTeam",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 0,
@@ -163,21 +163,21 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "home_team",
+						"name": "homeTeam",
 						"req": false,
 						"type": "`$OBJECT`",
 						"index$": 2,
 					},
 					map[string]any{
 						"active": true,
-						"name": "match_date",
+						"name": "matchDate",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 3,
 					},
 					map[string]any{
 						"active": true,
-						"name": "match_id",
+						"name": "matchId",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 4,
@@ -198,7 +198,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"active": true,
-						"name": "start_time",
+						"name": "startTime",
 						"req": false,
 						"type": "`$STRING`",
 						"index$": 7,
@@ -247,6 +247,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/final-results",
 								"parts": []any{
@@ -262,7 +263,7 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.matches`",
 								},
 								"index$": 0,
 							},
@@ -288,6 +289,7 @@ func MakeConfig() map[string]any {
 										},
 									},
 								},
+								"kind": "http",
 								"method": "GET",
 								"orig": "/api/live-scores",
 								"parts": []any{
@@ -302,12 +304,11 @@ func MakeConfig() map[string]any {
 								},
 								"transform": map[string]any{
 									"req": "`reqdata`",
-									"res": "`body`",
+									"res": "`body.matches`",
 								},
 								"index$": 1,
 							},
 						},
-						"key$": "list",
 					},
 				},
 				"relations": map[string]any{

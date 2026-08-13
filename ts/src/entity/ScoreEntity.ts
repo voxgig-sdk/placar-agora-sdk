@@ -37,7 +37,7 @@ class ScoreEntity extends PlacarAgoraEntityBase<Score> {
 
 
 
-  async list(this: any, reqmatch?: ScoreListMatch, ctrl?: Control): Promise<Score[]> {
+  async list(this: any, reqmatch?: ScoreListMatch, ctrl?: Control): Promise<ScoreEntity[]> {
 
     const utility = this._utility
 

@@ -15,11 +15,11 @@ declare(strict_types=1);
 /** Schedule entity data model. */
 class Schedule
 {
-    public ?array $away_team = null;
+    public ?array $awayTeam = null;
     public ?string $competition = null;
-    public ?array $home_team = null;
-    public ?string $match_id = null;
-    public ?string $scheduled_time = null;
+    public ?array $homeTeam = null;
+    public ?string $matchId = null;
+    public ?string $scheduledTime = null;
     public ?string $sport = null;
     public ?string $status = null;
     public ?string $venue = null;
@@ -28,11 +28,11 @@ class Schedule
 /** Request payload for Schedule#list. */
 class ScheduleListMatch
 {
-    public ?array $away_team = null;
+    public ?array $awayTeam = null;
     public ?string $competition = null;
-    public ?array $home_team = null;
-    public ?string $match_id = null;
-    public ?string $scheduled_time = null;
+    public ?array $homeTeam = null;
+    public ?string $matchId = null;
+    public ?string $scheduledTime = null;
     public ?string $sport = null;
     public ?string $status = null;
     public ?string $venue = null;
@@ -41,28 +41,28 @@ class ScheduleListMatch
 /** Score entity data model. */
 class Score
 {
-    public ?array $away_team = null;
+    public ?array $awayTeam = null;
     public ?string $competition = null;
-    public ?array $home_team = null;
-    public ?string $match_date = null;
-    public ?string $match_id = null;
+    public ?array $homeTeam = null;
+    public ?string $matchDate = null;
+    public ?string $matchId = null;
     public ?string $minute = null;
     public ?string $sport = null;
-    public ?string $start_time = null;
+    public ?string $startTime = null;
     public ?string $status = null;
 }
 
 /** Request payload for Score#list. */
 class ScoreListMatch
 {
-    public ?array $away_team = null;
+    public ?array $awayTeam = null;
     public ?string $competition = null;
-    public ?array $home_team = null;
-    public ?string $match_date = null;
-    public ?string $match_id = null;
+    public ?array $homeTeam = null;
+    public ?string $matchDate = null;
+    public ?string $matchId = null;
     public ?string $minute = null;
     public ?string $sport = null;
-    public ?string $start_time = null;
+    public ?string $startTime = null;
     public ?string $status = null;
 }
 

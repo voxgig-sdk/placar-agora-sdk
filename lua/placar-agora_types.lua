@@ -7,45 +7,45 @@
 -- edit by hand.
 
 ---@class Schedule
----@field away_team? table
+---@field awayTeam? table
 ---@field competition? string
----@field home_team? table
----@field match_id? string
----@field scheduled_time? string
+---@field homeTeam? table
+---@field matchId? string
+---@field scheduledTime? string
 ---@field sport? string
 ---@field status? string
 ---@field venue? string
 
 ---@class ScheduleListMatch
----@field away_team? table
+---@field awayTeam? table
 ---@field competition? string
----@field home_team? table
----@field match_id? string
----@field scheduled_time? string
+---@field homeTeam? table
+---@field matchId? string
+---@field scheduledTime? string
 ---@field sport? string
 ---@field status? string
 ---@field venue? string
 
 ---@class Score
----@field away_team? table
+---@field awayTeam? table
 ---@field competition? string
----@field home_team? table
----@field match_date? string
----@field match_id? string
+---@field homeTeam? table
+---@field matchDate? string
+---@field matchId? string
 ---@field minute? string
 ---@field sport? string
----@field start_time? string
+---@field startTime? string
 ---@field status? string
 
 ---@class ScoreListMatch
----@field away_team? table
+---@field awayTeam? table
 ---@field competition? string
----@field home_team? table
----@field match_date? string
----@field match_id? string
+---@field homeTeam? table
+---@field matchDate? string
+---@field matchId? string
 ---@field minute? string
 ---@field sport? string
----@field start_time? string
+---@field startTime? string
 ---@field status? string
 
 local M = {}

@@ -91,11 +91,11 @@ schedule = client.Schedule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `dict` | No |  |
+| `awayTeam` | `dict` | No |  |
 | `competition` | `str` | No |  |
-| `home_team` | `dict` | No |  |
-| `match_id` | `str` | No |  |
-| `scheduled_time` | `str` | No |  |
+| `homeTeam` | `dict` | No |  |
+| `matchId` | `str` | No |  |
+| `scheduledTime` | `str` | No |  |
 | `sport` | `str` | No |  |
 | `status` | `str` | No |  |
 | `venue` | `str` | No |  |
@@ -151,14 +151,14 @@ score = client.Score()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `dict` | No |  |
+| `awayTeam` | `dict` | No |  |
 | `competition` | `str` | No |  |
-| `home_team` | `dict` | No |  |
-| `match_date` | `str` | No |  |
-| `match_id` | `str` | No |  |
+| `homeTeam` | `dict` | No |  |
+| `matchDate` | `str` | No |  |
+| `matchId` | `str` | No |  |
 | `minute` | `str` | No |  |
 | `sport` | `str` | No |  |
-| `start_time` | `str` | No |  |
+| `startTime` | `str` | No |  |
 | `status` | `str` | No |  |
 
 ### Operations

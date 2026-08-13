@@ -14,12 +14,12 @@ from __future__ import annotations
 
 from urllib.parse import quote
 
-from config import make_config
-from features import _make_feature
-from core.control import PlacarAgoraControl
-from core.error import PlacarAgoraError
-from core.result import PlacarAgoraResult
-from core.spec import PlacarAgoraSpec
+from placaragora_sdk.config import make_config
+from placaragora_sdk.features import _make_feature
+from placaragora_sdk.core.control import PlacarAgoraControl
+from placaragora_sdk.core.error import PlacarAgoraError
+from placaragora_sdk.core.result import PlacarAgoraResult
+from placaragora_sdk.core.spec import PlacarAgoraSpec
 
 
 # True when this SDK was generated with the named feature.

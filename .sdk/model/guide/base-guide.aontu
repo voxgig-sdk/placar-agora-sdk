@@ -8,15 +8,18 @@ guide: {
   entity: schedule: {
     path: "/api/upcoming-games": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.matches`")|top
     }
   }
 
   entity: score: {
     path: "/api/final-results": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.matches`")|top
     }
     path: "/api/live-scores": {
       op: list: method: *GET
+      op: list: transform: res: *("`body.matches`")|top
     }
   }
 

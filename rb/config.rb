@@ -28,7 +28,7 @@ module PlacarAgoraConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "away_team",
+              "name" => "awayTeam",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 0,
@@ -42,21 +42,21 @@ module PlacarAgoraConfig
             },
             {
               "active" => true,
-              "name" => "home_team",
+              "name" => "homeTeam",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 2,
             },
             {
               "active" => true,
-              "name" => "match_id",
+              "name" => "matchId",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 3,
             },
             {
               "active" => true,
-              "name" => "scheduled_time",
+              "name" => "scheduledTime",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
@@ -119,6 +119,7 @@ module PlacarAgoraConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/upcoming-games",
                   "parts" => [
@@ -134,7 +135,7 @@ module PlacarAgoraConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.matches`",
                   },
                   "index$" => 0,
                 },
@@ -150,7 +151,7 @@ module PlacarAgoraConfig
           "fields" => [
             {
               "active" => true,
-              "name" => "away_team",
+              "name" => "awayTeam",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 0,
@@ -164,21 +165,21 @@ module PlacarAgoraConfig
             },
             {
               "active" => true,
-              "name" => "home_team",
+              "name" => "homeTeam",
               "req" => false,
               "type" => "`$OBJECT`",
               "index$" => 2,
             },
             {
               "active" => true,
-              "name" => "match_date",
+              "name" => "matchDate",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 3,
             },
             {
               "active" => true,
-              "name" => "match_id",
+              "name" => "matchId",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 4,
@@ -199,7 +200,7 @@ module PlacarAgoraConfig
             },
             {
               "active" => true,
-              "name" => "start_time",
+              "name" => "startTime",
               "req" => false,
               "type" => "`$STRING`",
               "index$" => 7,
@@ -248,6 +249,7 @@ module PlacarAgoraConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/final-results",
                   "parts" => [
@@ -263,7 +265,7 @@ module PlacarAgoraConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.matches`",
                   },
                   "index$" => 0,
                 },
@@ -289,6 +291,7 @@ module PlacarAgoraConfig
                       },
                     ],
                   },
+                  "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/live-scores",
                   "parts" => [
@@ -303,7 +306,7 @@ module PlacarAgoraConfig
                   },
                   "transform" => {
                     "req" => "`reqdata`",
-                    "res" => "`body`",
+                    "res" => "`body.matches`",
                   },
                   "index$" => 1,
                 },

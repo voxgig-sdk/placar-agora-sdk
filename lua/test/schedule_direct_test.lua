@@ -61,11 +61,11 @@ function schedule_direct_setup(mockres)
   local calls = {}
 
   local env = runner.env_override({
-    ["PLACARAGORA_TEST_SCHEDULE_ENTID"] = {},
-    ["PLACARAGORA_TEST_LIVE"] = "FALSE",
+    ["PLACAR_AGORA_TEST_SCHEDULE_ENTID"] = {},
+    ["PLACAR_AGORA_TEST_LIVE"] = "FALSE",
   })
 
-  local live = env["PLACARAGORA_TEST_LIVE"] == "TRUE"
+  local live = env["PLACAR_AGORA_TEST_LIVE"] == "TRUE"
 
   if live then
     local merged_opts = {

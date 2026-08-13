@@ -16,11 +16,11 @@
 import pytest
 
 from projectname_sdk import PlacarAgoraSDK
-from core.error import PlacarAgoraError
-from core.result import PlacarAgoraResult
-from core.response import PlacarAgoraResponse
-from core.spec import PlacarAgoraSpec
-from feature.base_feature import PlacarAgoraBaseFeature
+from projectname_sdk.core.error import PlacarAgoraError
+from projectname_sdk.core.result import PlacarAgoraResult
+from projectname_sdk.core.response import PlacarAgoraResponse
+from projectname_sdk.core.spec import PlacarAgoraSpec
+from projectname_sdk.feature.base_feature import PlacarAgoraBaseFeature
 
 
 def _client():

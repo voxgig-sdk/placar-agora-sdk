@@ -6,7 +6,7 @@ main: kit: entity: score: {
 
   fields: [
     {
-      name: "away_team"
+      name: "awayTeam"
       req: false
       type: "`$OBJECT`"
     }
@@ -16,17 +16,17 @@ main: kit: entity: score: {
       type: "`$STRING`"
     }
     {
-      name: "home_team"
+      name: "homeTeam"
       req: false
       type: "`$OBJECT`"
     }
     {
-      name: "match_date"
+      name: "matchDate"
       req: false
       type: "`$STRING`"
     }
     {
-      name: "match_id"
+      name: "matchId"
       req: false
       type: "`$STRING`"
     }
@@ -41,7 +41,7 @@ main: kit: entity: score: {
       type: "`$STRING`"
     }
     {
-      name: "start_time"
+      name: "startTime"
       req: false
       type: "`$STRING`"
     }
@@ -98,7 +98,7 @@ main: kit: entity: score: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.matches`"
           }
         }
         {
@@ -134,7 +134,7 @@ main: kit: entity: score: {
           }
           transform: {
             req: "`reqdata`"
-            res: "`body`"
+            res: "`body.matches`"
           }
         }
       ]

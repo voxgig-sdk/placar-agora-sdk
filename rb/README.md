@@ -37,7 +37,7 @@ begin
   # list returns an Array of Schedule records — iterate directly.
   schedules = client.Schedule.list
   schedules.each do |item|
-    puts "#{item["away_team"]}"
+    puts "#{item["awayTeam"]}"
   end
 rescue => err
   warn "list failed: #{err}"
@@ -119,7 +119,8 @@ Create a mock client for unit testing — no server required:
 ```ruby
 client = PlacarAgoraSDK.test
 
-# Entity ops return the bare mock record (raises on error).
+# Entity ops return the ENTITY (raises on error);
+# call data_get for the mock record.
 schedule = client.Schedule.list()
 puts schedule
 ```
@@ -237,11 +238,11 @@ returns a result `Hash` with these keys:
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_id` |  |
-| `scheduled_time` |  |
+| `homeTeam` |  |
+| `matchId` |  |
+| `scheduledTime` |  |
 | `sport` |  |
 | `status` |  |
 | `venue` |  |
@@ -254,14 +255,14 @@ API path: `/api/upcoming-games`
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_date` |  |
-| `match_id` |  |
+| `homeTeam` |  |
+| `matchDate` |  |
+| `matchId` |  |
 | `minute` |  |
 | `sport` |  |
-| `start_time` |  |
+| `startTime` |  |
 | `status` |  |
 
 Operations: List.
@@ -287,11 +288,11 @@ Create an instance: `schedule = client.Schedule`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `Hash` |  |
+| `awayTeam` | `Hash` |  |
 | `competition` | `String` |  |
-| `home_team` | `Hash` |  |
-| `match_id` | `String` |  |
-| `scheduled_time` | `String` |  |
+| `homeTeam` | `Hash` |  |
+| `matchId` | `String` |  |
+| `scheduledTime` | `String` |  |
 | `sport` | `String` |  |
 | `status` | `String` |  |
 | `venue` | `String` |  |
@@ -318,14 +319,14 @@ Create an instance: `score = client.Score`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `Hash` |  |
+| `awayTeam` | `Hash` |  |
 | `competition` | `String` |  |
-| `home_team` | `Hash` |  |
-| `match_date` | `String` |  |
-| `match_id` | `String` |  |
+| `homeTeam` | `Hash` |  |
+| `matchDate` | `String` |  |
+| `matchId` | `String` |  |
 | `minute` | `String` |  |
 | `sport` | `String` |  |
-| `start_time` | `String` |  |
+| `startTime` | `String` |  |
 | `status` | `String` |  |
 
 #### Example: List

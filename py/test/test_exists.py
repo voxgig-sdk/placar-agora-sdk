@@ -1,4 +1,4 @@
-# ProjectName SDK exists test
+# PlacarAgora SDK exists test
 
 import pytest
 from placaragora_sdk import PlacarAgoraSDK

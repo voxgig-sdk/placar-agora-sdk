@@ -102,11 +102,11 @@ fmt.Println(schedule.GetName()) // "schedule"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `map[string]any` | No |  |
+| `awayTeam` | `map[string]any` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `map[string]any` | No |  |
-| `match_id` | `string` | No |  |
-| `scheduled_time` | `string` | No |  |
+| `homeTeam` | `map[string]any` | No |  |
+| `matchId` | `string` | No |  |
+| `scheduledTime` | `string` | No |  |
 | `sport` | `string` | No |  |
 | `status` | `string` | No |  |
 | `venue` | `string` | No |  |
@@ -160,14 +160,14 @@ fmt.Println(score.GetName()) // "score"
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `map[string]any` | No |  |
+| `awayTeam` | `map[string]any` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `map[string]any` | No |  |
-| `match_date` | `string` | No |  |
-| `match_id` | `string` | No |  |
+| `homeTeam` | `map[string]any` | No |  |
+| `matchDate` | `string` | No |  |
+| `matchId` | `string` | No |  |
 | `minute` | `string` | No |  |
 | `sport` | `string` | No |  |
-| `start_time` | `string` | No |  |
+| `startTime` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations

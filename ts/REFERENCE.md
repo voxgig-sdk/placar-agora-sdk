@@ -128,11 +128,11 @@ const schedule = client.Schedule()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `Record<string, any>` | No |  |
+| `awayTeam` | `Record<string, any>` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `Record<string, any>` | No |  |
-| `match_id` | `string` | No |  |
-| `scheduled_time` | `string` | No |  |
+| `homeTeam` | `Record<string, any>` | No |  |
+| `matchId` | `string` | No |  |
+| `scheduledTime` | `string` | No |  |
 | `sport` | `string` | No |  |
 | `status` | `string` | No |  |
 | `venue` | `string` | No |  |
@@ -185,14 +185,14 @@ const score = client.Score()
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `Record<string, any>` | No |  |
+| `awayTeam` | `Record<string, any>` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `Record<string, any>` | No |  |
-| `match_date` | `string` | No |  |
-| `match_id` | `string` | No |  |
+| `homeTeam` | `Record<string, any>` | No |  |
+| `matchDate` | `string` | No |  |
+| `matchId` | `string` | No |  |
 | `minute` | `string` | No |  |
 | `sport` | `string` | No |  |
-| `start_time` | `string` | No |  |
+| `startTime` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations

@@ -66,11 +66,11 @@ function score_direct_setup($mockres)
     $calls = new \ArrayObject();
 
     $env = Runner::env_override([
-        "PLACARAGORA_TEST_SCORE_ENTID" => [],
-        "PLACARAGORA_TEST_LIVE" => "FALSE",
+        "PLACAR_AGORA_TEST_SCORE_ENTID" => [],
+        "PLACAR_AGORA_TEST_LIVE" => "FALSE",
     ]);
 
-    $live = $env["PLACARAGORA_TEST_LIVE"] === "TRUE";
+    $live = $env["PLACAR_AGORA_TEST_LIVE"] === "TRUE";
 
     if ($live) {
         $merged_opts = [

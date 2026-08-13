@@ -38,7 +38,7 @@ try {
     // list() returns an array of Schedule records — iterate directly.
     $schedules = $client->Schedule()->list();
     foreach ($schedules as $item) {
-        echo $item["away_team"] . "\n";
+        echo $item["awayTeam"] . "\n";
     }
 } catch (\Throwable $err) {
     echo "Error: " . $err->getMessage();
@@ -125,7 +125,8 @@ Create a mock client for unit testing — no server required:
 ```php
 $client = PlacarAgoraSDK::test();
 
-// Entity ops return the bare mock record (throws on error).
+// Entity ops return the ENTITY (throws on error);
+// call data_get() for the mock record.
 $schedule = $client->Schedule()->list();
 print_r($schedule);
 ```
@@ -225,7 +226,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (an `array` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (an `array` for single-entity
 ops, a `list` for `list`) and throw on error. Wrap calls in
 `try`/`catch` to handle failures.
 
@@ -247,11 +248,11 @@ On error, `ok` is `false` and `$err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_id` |  |
-| `scheduled_time` |  |
+| `homeTeam` |  |
+| `matchId` |  |
+| `scheduledTime` |  |
 | `sport` |  |
 | `status` |  |
 | `venue` |  |
@@ -264,14 +265,14 @@ API path: `/api/upcoming-games`
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_date` |  |
-| `match_id` |  |
+| `homeTeam` |  |
+| `matchDate` |  |
+| `matchId` |  |
 | `minute` |  |
 | `sport` |  |
-| `start_time` |  |
+| `startTime` |  |
 | `status` |  |
 
 Operations: List.
@@ -297,11 +298,11 @@ Create an instance: `$schedule = $client->Schedule();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `array` |  |
+| `awayTeam` | `array` |  |
 | `competition` | `string` |  |
-| `home_team` | `array` |  |
-| `match_id` | `string` |  |
-| `scheduled_time` | `string` |  |
+| `homeTeam` | `array` |  |
+| `matchId` | `string` |  |
+| `scheduledTime` | `string` |  |
 | `sport` | `string` |  |
 | `status` | `string` |  |
 | `venue` | `string` |  |
@@ -328,14 +329,14 @@ Create an instance: `$score = $client->Score();`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `array` |  |
+| `awayTeam` | `array` |  |
 | `competition` | `string` |  |
-| `home_team` | `array` |  |
-| `match_date` | `string` |  |
-| `match_id` | `string` |  |
+| `homeTeam` | `array` |  |
+| `matchDate` | `string` |  |
+| `matchId` | `string` |  |
 | `minute` | `string` |  |
 | `sport` | `string` |  |
-| `start_time` | `string` |  |
+| `startTime` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: List

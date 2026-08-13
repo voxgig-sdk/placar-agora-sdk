@@ -33,7 +33,7 @@ class PlacarAgoraConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'away_team',
+              'name' => 'awayTeam',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 0,
@@ -47,21 +47,21 @@ class PlacarAgoraConfig
             ],
             [
               'active' => true,
-              'name' => 'home_team',
+              'name' => 'homeTeam',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 2,
             ],
             [
               'active' => true,
-              'name' => 'match_id',
+              'name' => 'matchId',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 3,
             ],
             [
               'active' => true,
-              'name' => 'scheduled_time',
+              'name' => 'scheduledTime',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
@@ -124,6 +124,7 @@ class PlacarAgoraConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/upcoming-games',
                   'parts' => [
@@ -139,7 +140,7 @@ class PlacarAgoraConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.matches`',
                   ],
                   'index$' => 0,
                 ],
@@ -155,7 +156,7 @@ class PlacarAgoraConfig
           'fields' => [
             [
               'active' => true,
-              'name' => 'away_team',
+              'name' => 'awayTeam',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 0,
@@ -169,21 +170,21 @@ class PlacarAgoraConfig
             ],
             [
               'active' => true,
-              'name' => 'home_team',
+              'name' => 'homeTeam',
               'req' => false,
               'type' => '`$OBJECT`',
               'index$' => 2,
             ],
             [
               'active' => true,
-              'name' => 'match_date',
+              'name' => 'matchDate',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 3,
             ],
             [
               'active' => true,
-              'name' => 'match_id',
+              'name' => 'matchId',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 4,
@@ -204,7 +205,7 @@ class PlacarAgoraConfig
             ],
             [
               'active' => true,
-              'name' => 'start_time',
+              'name' => 'startTime',
               'req' => false,
               'type' => '`$STRING`',
               'index$' => 7,
@@ -253,6 +254,7 @@ class PlacarAgoraConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/final-results',
                   'parts' => [
@@ -268,7 +270,7 @@ class PlacarAgoraConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.matches`',
                   ],
                   'index$' => 0,
                 ],
@@ -294,6 +296,7 @@ class PlacarAgoraConfig
                       ],
                     ],
                   ],
+                  'kind' => 'http',
                   'method' => 'GET',
                   'orig' => '/api/live-scores',
                   'parts' => [
@@ -308,7 +311,7 @@ class PlacarAgoraConfig
                   ],
                   'transform' => [
                     'req' => '`reqdata`',
-                    'res' => '`body`',
+                    'res' => '`body.matches`',
                   ],
                   'index$' => 1,
                 ],

@@ -3,9 +3,9 @@
 import json
 import pytest
 
-from utility.voxgig_struct import voxgig_struct as vs
+from placaragora_sdk.utility.voxgig_struct import voxgig_struct as vs
 from placaragora_sdk import PlacarAgoraSDK
-from core import helpers
+from placaragora_sdk.core import helpers
 from test import runner
 
 
@@ -58,11 +58,11 @@ def _score_direct_setup(mockres):
     calls = []
 
     env = runner.env_override({
-        "PLACARAGORA_TEST_SCORE_ENTID": {},
-        "PLACARAGORA_TEST_LIVE": "FALSE",
+        "PLACAR_AGORA_TEST_SCORE_ENTID": {},
+        "PLACAR_AGORA_TEST_LIVE": "FALSE",
     })
 
-    live = env.get("PLACARAGORA_TEST_LIVE") == "TRUE"
+    live = env.get("PLACAR_AGORA_TEST_LIVE") == "TRUE"
 
     if live:
         merged_opts = {

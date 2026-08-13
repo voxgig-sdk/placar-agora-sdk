@@ -26,8 +26,8 @@ import {
 describe('ScheduleEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when PLACARAGORA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('PLACARAGORA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when PLACAR_AGORA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('PLACAR_AGORA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = PlacarAgoraSDK.test()
@@ -63,7 +63,7 @@ describe('ScheduleEntity', async () => {
     const schedule_ref01_ent = client.Schedule()
     const schedule_ref01_match: any = {}
 
-    const schedule_ref01_list = await schedule_ref01_ent.list(schedule_ref01_match)
+    const schedule_ref01_list = (await schedule_ref01_ent.list(schedule_ref01_match)).map((e: any) => e.data())
 
 
   })

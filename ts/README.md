@@ -35,7 +35,9 @@ const client = new PlacarAgoraSDK()
 
 ### 2. List schedule records
 
-`list()` resolves to an array of Schedule objects — iterate it directly:
+`list()` resolves to an array of Schedule ENTITIES — every operation
+resolves to entities, not raw records. Iterate them directly, and call
+`.data()` on one for the record it holds:
 
 ```ts
 const schedules = await client.Schedule().list()
@@ -120,7 +122,8 @@ Create a mock client for unit testing — no server required:
 const client = PlacarAgoraSDK.test()
 
 const schedule = await client.Schedule().list()
-// schedule is a bare entity populated with mock response data
+// schedule is the entity, populated with mock response data
+// — call schedule.data() for the record itself
 console.log(schedule)
 ```
 
@@ -285,11 +288,11 @@ The `prepare()` method returns:
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_id` |  |
-| `scheduled_time` |  |
+| `homeTeam` |  |
+| `matchId` |  |
+| `scheduledTime` |  |
 | `sport` |  |
 | `status` |  |
 | `venue` |  |
@@ -302,14 +305,14 @@ API path: `/api/upcoming-games`
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_date` |  |
-| `match_id` |  |
+| `homeTeam` |  |
+| `matchDate` |  |
+| `matchId` |  |
 | `minute` |  |
 | `sport` |  |
-| `start_time` |  |
+| `startTime` |  |
 | `status` |  |
 
 Operations: list.
@@ -335,11 +338,11 @@ Create an instance: `const schedule = client.Schedule()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `Record<string, any>` |  |
+| `awayTeam` | `Record<string, any>` |  |
 | `competition` | `string` |  |
-| `home_team` | `Record<string, any>` |  |
-| `match_id` | `string` |  |
-| `scheduled_time` | `string` |  |
+| `homeTeam` | `Record<string, any>` |  |
+| `matchId` | `string` |  |
+| `scheduledTime` | `string` |  |
 | `sport` | `string` |  |
 | `status` | `string` |  |
 | `venue` | `string` |  |
@@ -365,14 +368,14 @@ Create an instance: `const score = client.Score()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `Record<string, any>` |  |
+| `awayTeam` | `Record<string, any>` |  |
 | `competition` | `string` |  |
-| `home_team` | `Record<string, any>` |  |
-| `match_date` | `string` |  |
-| `match_id` | `string` |  |
+| `homeTeam` | `Record<string, any>` |  |
+| `matchDate` | `string` |  |
+| `matchId` | `string` |  |
 | `minute` | `string` |  |
 | `sport` | `string` |  |
-| `start_time` | `string` |  |
+| `startTime` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: List

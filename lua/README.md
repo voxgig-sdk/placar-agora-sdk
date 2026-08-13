@@ -219,9 +219,9 @@ data **directly** — there is no wrapper:
 
 Check `err` first (it is non-`nil` on failure), then use `value`:
 
-    local schedule, err = client:Schedule():load()
+    local schedule, err = client:Schedule():list()
     if err then error(err) end
-    -- schedule is the loaded record
+    -- schedule is the record list
 
 Only `direct()` returns a response envelope — a `table` with `ok`,
 `status`, `headers`, and `data` keys.
@@ -232,11 +232,11 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_id` |  |
-| `scheduled_time` |  |
+| `homeTeam` |  |
+| `matchId` |  |
+| `scheduledTime` |  |
 | `sport` |  |
 | `status` |  |
 | `venue` |  |
@@ -249,14 +249,14 @@ API path: `/api/upcoming-games`
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_date` |  |
-| `match_id` |  |
+| `homeTeam` |  |
+| `matchDate` |  |
+| `matchId` |  |
 | `minute` |  |
 | `sport` |  |
-| `start_time` |  |
+| `startTime` |  |
 | `status` |  |
 
 Operations: List.
@@ -282,11 +282,11 @@ Create an instance: `local schedule = client:Schedule(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `table` |  |
+| `awayTeam` | `table` |  |
 | `competition` | `string` |  |
-| `home_team` | `table` |  |
-| `match_id` | `string` |  |
-| `scheduled_time` | `string` |  |
+| `homeTeam` | `table` |  |
+| `matchId` | `string` |  |
+| `scheduledTime` | `string` |  |
 | `sport` | `string` |  |
 | `status` | `string` |  |
 | `venue` | `string` |  |
@@ -312,14 +312,14 @@ Create an instance: `local score = client:Score(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `table` |  |
+| `awayTeam` | `table` |  |
 | `competition` | `string` |  |
-| `home_team` | `table` |  |
-| `match_date` | `string` |  |
-| `match_id` | `string` |  |
+| `homeTeam` | `table` |  |
+| `matchDate` | `string` |  |
+| `matchId` | `string` |  |
 | `minute` | `string` |  |
 | `sport` | `string` |  |
-| `start_time` | `string` |  |
+| `startTime` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: List

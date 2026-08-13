@@ -94,11 +94,11 @@ local schedule = client:Schedule(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `table` | No |  |
+| `awayTeam` | `table` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `table` | No |  |
-| `match_id` | `string` | No |  |
-| `scheduled_time` | `string` | No |  |
+| `homeTeam` | `table` | No |  |
+| `matchId` | `string` | No |  |
+| `scheduledTime` | `string` | No |  |
 | `sport` | `string` | No |  |
 | `status` | `string` | No |  |
 | `venue` | `string` | No |  |
@@ -153,14 +153,14 @@ local score = client:Score(nil)
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `table` | No |  |
+| `awayTeam` | `table` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `table` | No |  |
-| `match_date` | `string` | No |  |
-| `match_id` | `string` | No |  |
+| `homeTeam` | `table` | No |  |
+| `matchDate` | `string` | No |  |
+| `matchId` | `string` | No |  |
 | `minute` | `string` | No |  |
 | `sport` | `string` | No |  |
-| `start_time` | `string` | No |  |
+| `startTime` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations

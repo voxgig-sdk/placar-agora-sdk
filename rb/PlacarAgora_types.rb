@@ -10,19 +10,19 @@
 
 # Schedule entity data model.
 #
-# @!attribute [rw] away_team
+# @!attribute [rw] awayTeam
 #   @return [Hash, nil]
 #
 # @!attribute [rw] competition
 #   @return [String, nil]
 #
-# @!attribute [rw] home_team
+# @!attribute [rw] homeTeam
 #   @return [Hash, nil]
 #
-# @!attribute [rw] match_id
+# @!attribute [rw] matchId
 #   @return [String, nil]
 #
-# @!attribute [rw] scheduled_time
+# @!attribute [rw] scheduledTime
 #   @return [String, nil]
 #
 # @!attribute [rw] sport
@@ -34,11 +34,11 @@
 # @!attribute [rw] venue
 #   @return [String, nil]
 Schedule = Struct.new(
-  :away_team,
+  :awayTeam,
   :competition,
-  :home_team,
-  :match_id,
-  :scheduled_time,
+  :homeTeam,
+  :matchId,
+  :scheduledTime,
   :sport,
   :status,
   :venue,
@@ -47,19 +47,19 @@ Schedule = Struct.new(
 
 # Request payload for Schedule#list.
 #
-# @!attribute [rw] away_team
+# @!attribute [rw] awayTeam
 #   @return [Hash, nil]
 #
 # @!attribute [rw] competition
 #   @return [String, nil]
 #
-# @!attribute [rw] home_team
+# @!attribute [rw] homeTeam
 #   @return [Hash, nil]
 #
-# @!attribute [rw] match_id
+# @!attribute [rw] matchId
 #   @return [String, nil]
 #
-# @!attribute [rw] scheduled_time
+# @!attribute [rw] scheduledTime
 #   @return [String, nil]
 #
 # @!attribute [rw] sport
@@ -71,11 +71,11 @@ Schedule = Struct.new(
 # @!attribute [rw] venue
 #   @return [String, nil]
 ScheduleListMatch = Struct.new(
-  :away_team,
+  :awayTeam,
   :competition,
-  :home_team,
-  :match_id,
-  :scheduled_time,
+  :homeTeam,
+  :matchId,
+  :scheduledTime,
   :sport,
   :status,
   :venue,
@@ -84,19 +84,19 @@ ScheduleListMatch = Struct.new(
 
 # Score entity data model.
 #
-# @!attribute [rw] away_team
+# @!attribute [rw] awayTeam
 #   @return [Hash, nil]
 #
 # @!attribute [rw] competition
 #   @return [String, nil]
 #
-# @!attribute [rw] home_team
+# @!attribute [rw] homeTeam
 #   @return [Hash, nil]
 #
-# @!attribute [rw] match_date
+# @!attribute [rw] matchDate
 #   @return [String, nil]
 #
-# @!attribute [rw] match_id
+# @!attribute [rw] matchId
 #   @return [String, nil]
 #
 # @!attribute [rw] minute
@@ -105,39 +105,39 @@ ScheduleListMatch = Struct.new(
 # @!attribute [rw] sport
 #   @return [String, nil]
 #
-# @!attribute [rw] start_time
+# @!attribute [rw] startTime
 #   @return [String, nil]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 Score = Struct.new(
-  :away_team,
+  :awayTeam,
   :competition,
-  :home_team,
-  :match_date,
-  :match_id,
+  :homeTeam,
+  :matchDate,
+  :matchId,
   :minute,
   :sport,
-  :start_time,
+  :startTime,
   :status,
   keyword_init: true
 )
 
 # Request payload for Score#list.
 #
-# @!attribute [rw] away_team
+# @!attribute [rw] awayTeam
 #   @return [Hash, nil]
 #
 # @!attribute [rw] competition
 #   @return [String, nil]
 #
-# @!attribute [rw] home_team
+# @!attribute [rw] homeTeam
 #   @return [Hash, nil]
 #
-# @!attribute [rw] match_date
+# @!attribute [rw] matchDate
 #   @return [String, nil]
 #
-# @!attribute [rw] match_id
+# @!attribute [rw] matchId
 #   @return [String, nil]
 #
 # @!attribute [rw] minute
@@ -146,20 +146,20 @@ Score = Struct.new(
 # @!attribute [rw] sport
 #   @return [String, nil]
 #
-# @!attribute [rw] start_time
+# @!attribute [rw] startTime
 #   @return [String, nil]
 #
 # @!attribute [rw] status
 #   @return [String, nil]
 ScoreListMatch = Struct.new(
-  :away_team,
+  :awayTeam,
   :competition,
-  :home_team,
-  :match_date,
-  :match_id,
+  :homeTeam,
+  :matchDate,
+  :matchId,
   :minute,
   :sport,
-  :start_time,
+  :startTime,
   :status,
   keyword_init: true
 )

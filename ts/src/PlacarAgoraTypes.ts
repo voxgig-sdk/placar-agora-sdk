@@ -6,48 +6,48 @@
 // @voxgig/apidef VALID_CANON). Do not edit by hand.
 
 export interface Schedule {
-  away_team?: Record<string, any>
+  awayTeam?: Record<string, any>
   competition?: string
-  home_team?: Record<string, any>
-  match_id?: string
-  scheduled_time?: string
+  homeTeam?: Record<string, any>
+  matchId?: string
+  scheduledTime?: string
   sport?: string
   status?: string
   venue?: string
 }
 
 export interface ScheduleListMatch {
-  away_team?: Record<string, any>
+  awayTeam?: Record<string, any>
   competition?: string
-  home_team?: Record<string, any>
-  match_id?: string
-  scheduled_time?: string
+  homeTeam?: Record<string, any>
+  matchId?: string
+  scheduledTime?: string
   sport?: string
   status?: string
   venue?: string
 }
 
 export interface Score {
-  away_team?: Record<string, any>
+  awayTeam?: Record<string, any>
   competition?: string
-  home_team?: Record<string, any>
-  match_date?: string
-  match_id?: string
+  homeTeam?: Record<string, any>
+  matchDate?: string
+  matchId?: string
   minute?: string
   sport?: string
-  start_time?: string
+  startTime?: string
   status?: string
 }
 
 export interface ScoreListMatch {
-  away_team?: Record<string, any>
+  awayTeam?: Record<string, any>
   competition?: string
-  home_team?: Record<string, any>
-  match_date?: string
-  match_id?: string
+  homeTeam?: Record<string, any>
+  matchDate?: string
+  matchId?: string
   minute?: string
   sport?: string
-  start_time?: string
+  startTime?: string
   status?: string
 }
 

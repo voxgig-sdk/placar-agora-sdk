@@ -26,8 +26,8 @@ import {
 describe('ScoreEntity', async () => {
 
   // Per-test live pacing. Delay is read from sdk-test-control.json's
-  // `test.live.delayMs`; only sleeps when PLACARAGORA_TEST_LIVE=TRUE.
-  afterEach(liveDelay('PLACARAGORA_TEST_LIVE'))
+  // `test.live.delayMs`; only sleeps when PLACAR_AGORA_TEST_LIVE=TRUE.
+  afterEach(liveDelay('PLACAR_AGORA_TEST_LIVE'))
 
   test('instance', async () => {
     const testsdk = PlacarAgoraSDK.test()
@@ -63,7 +63,7 @@ describe('ScoreEntity', async () => {
     const score_ref01_ent = client.Score()
     const score_ref01_match: any = {}
 
-    const score_ref01_list = await score_ref01_ent.list(score_ref01_match)
+    const score_ref01_list = (await score_ref01_ent.list(score_ref01_match)).map((e: any) => e.data())
 
 
   })

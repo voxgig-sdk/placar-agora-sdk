@@ -23,8 +23,8 @@ module PlacarAgoraTestRunner
   end
 
   def self.env_override(m)
-    live = getenv("PLACARAGORA_TEST_LIVE")
-    override = getenv("PLACARAGORA_TEST_OVERRIDE")
+    live = getenv("PLACAR_AGORA_TEST_LIVE")
+    override = getenv("PLACAR_AGORA_TEST_OVERRIDE")
 
     if live == "TRUE" || override == "TRUE"
       m.each_key do |key|
@@ -44,8 +44,8 @@ module PlacarAgoraTestRunner
       end
     end
 
-    explain = getenv("PLACARAGORA_TEST_EXPLAIN")
-    m["PLACARAGORA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
+    explain = getenv("PLACAR_AGORA_TEST_EXPLAIN")
+    m["PLACAR_AGORA_TEST_EXPLAIN"] = explain if explain && !explain.empty?
 
     m
   end

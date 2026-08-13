@@ -261,11 +261,11 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 
 | Field | Description |
 | --- | --- |
-| `"away_team"` |  |
+| `"awayTeam"` |  |
 | `"competition"` |  |
-| `"home_team"` |  |
-| `"match_id"` |  |
-| `"scheduled_time"` |  |
+| `"homeTeam"` |  |
+| `"matchId"` |  |
+| `"scheduledTime"` |  |
 | `"sport"` |  |
 | `"status"` |  |
 | `"venue"` |  |
@@ -278,14 +278,14 @@ API path: `/api/upcoming-games`
 
 | Field | Description |
 | --- | --- |
-| `"away_team"` |  |
+| `"awayTeam"` |  |
 | `"competition"` |  |
-| `"home_team"` |  |
-| `"match_date"` |  |
-| `"match_id"` |  |
+| `"homeTeam"` |  |
+| `"matchDate"` |  |
+| `"matchId"` |  |
 | `"minute"` |  |
 | `"sport"` |  |
-| `"start_time"` |  |
+| `"startTime"` |  |
 | `"status"` |  |
 
 Operations: List.
@@ -311,11 +311,11 @@ Create an instance: `schedule := client.Schedule(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `map[string]any` |  |
+| `awayTeam` | `map[string]any` |  |
 | `competition` | `string` |  |
-| `home_team` | `map[string]any` |  |
-| `match_id` | `string` |  |
-| `scheduled_time` | `string` |  |
+| `homeTeam` | `map[string]any` |  |
+| `matchId` | `string` |  |
+| `scheduledTime` | `string` |  |
 | `sport` | `string` |  |
 | `status` | `string` |  |
 | `venue` | `string` |  |
@@ -345,14 +345,14 @@ Create an instance: `score := client.Score(nil)`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `map[string]any` |  |
+| `awayTeam` | `map[string]any` |  |
 | `competition` | `string` |  |
-| `home_team` | `map[string]any` |  |
-| `match_date` | `string` |  |
-| `match_id` | `string` |  |
+| `homeTeam` | `map[string]any` |  |
+| `matchDate` | `string` |  |
+| `matchId` | `string` |  |
 | `minute` | `string` |  |
 | `sport` | `string` |  |
-| `start_time` | `string` |  |
+| `startTime` | `string` |  |
 | `status` | `string` |  |
 
 #### Example: List

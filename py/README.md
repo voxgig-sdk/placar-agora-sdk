@@ -124,7 +124,8 @@ Create a mock client for unit testing — no server required:
 ```python
 client = PlacarAgoraSDK.test()
 
-# Entity ops return the bare record and raise on error.
+# Entity ops return the ENTITY and raises on error;
+# call data_get() for the record.
 schedule = client.Schedule().list()
 # schedule contains the mock response record
 ```
@@ -221,7 +222,7 @@ All entities share the same interface.
 
 ### Result shape
 
-Entity operations return the bare result data (a `dict` for single-entity
+Entity operations return the ENTITY (call data_get() for the record) (a `dict` for single-entity
 ops, a `list` for `list`) and raise on error. Wrap calls in
 `try`/`except` to handle failures.
 
@@ -243,11 +244,11 @@ On error, `ok` is `False` and `err` contains the error value.
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_id` |  |
-| `scheduled_time` |  |
+| `homeTeam` |  |
+| `matchId` |  |
+| `scheduledTime` |  |
 | `sport` |  |
 | `status` |  |
 | `venue` |  |
@@ -260,14 +261,14 @@ API path: `/api/upcoming-games`
 
 | Field | Description |
 | --- | --- |
-| `away_team` |  |
+| `awayTeam` |  |
 | `competition` |  |
-| `home_team` |  |
-| `match_date` |  |
-| `match_id` |  |
+| `homeTeam` |  |
+| `matchDate` |  |
+| `matchId` |  |
 | `minute` |  |
 | `sport` |  |
-| `start_time` |  |
+| `startTime` |  |
 | `status` |  |
 
 Operations: List.
@@ -293,11 +294,11 @@ Create an instance: `schedule = client.Schedule()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `dict` |  |
+| `awayTeam` | `dict` |  |
 | `competition` | `str` |  |
-| `home_team` | `dict` |  |
-| `match_id` | `str` |  |
-| `scheduled_time` | `str` |  |
+| `homeTeam` | `dict` |  |
+| `matchId` | `str` |  |
+| `scheduledTime` | `str` |  |
 | `sport` | `str` |  |
 | `status` | `str` |  |
 | `venue` | `str` |  |
@@ -323,14 +324,14 @@ Create an instance: `score = client.Score()`
 
 | Field | Type | Description |
 | --- | --- | --- |
-| `away_team` | `dict` |  |
+| `awayTeam` | `dict` |  |
 | `competition` | `str` |  |
-| `home_team` | `dict` |  |
-| `match_date` | `str` |  |
-| `match_id` | `str` |  |
+| `homeTeam` | `dict` |  |
+| `matchDate` | `str` |  |
+| `matchId` | `str` |  |
 | `minute` | `str` |  |
 | `sport` | `str` |  |
-| `start_time` | `str` |  |
+| `startTime` | `str` |  |
 | `status` | `str` |  |
 
 #### Example: List

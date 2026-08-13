@@ -43,8 +43,8 @@ class PlacarAgoraTestRunner
 
     public static function env_override(array $m): array
     {
-        $live = self::getenv('PLACARAGORA_TEST_LIVE');
-        $override = self::getenv('PLACARAGORA_TEST_OVERRIDE');
+        $live = self::getenv('PLACAR_AGORA_TEST_LIVE');
+        $override = self::getenv('PLACAR_AGORA_TEST_OVERRIDE');
 
         if ($live === 'TRUE' || $override === 'TRUE') {
             foreach (array_keys($m) as $key) {
@@ -63,9 +63,9 @@ class PlacarAgoraTestRunner
             }
         }
 
-        $explain = self::getenv('PLACARAGORA_TEST_EXPLAIN');
+        $explain = self::getenv('PLACAR_AGORA_TEST_EXPLAIN');
         if ($explain !== null && $explain !== '') {
-            $m['PLACARAGORA_TEST_EXPLAIN'] = $explain;
+            $m['PLACAR_AGORA_TEST_EXPLAIN'] = $explain;
         }
 
         return $m;

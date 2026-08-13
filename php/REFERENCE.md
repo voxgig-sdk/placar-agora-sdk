@@ -96,11 +96,11 @@ $schedule = $client->Schedule();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `array` | No |  |
+| `awayTeam` | `array` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `array` | No |  |
-| `match_id` | `string` | No |  |
-| `scheduled_time` | `string` | No |  |
+| `homeTeam` | `array` | No |  |
+| `matchId` | `string` | No |  |
+| `scheduledTime` | `string` | No |  |
 | `sport` | `string` | No |  |
 | `status` | `string` | No |  |
 | `venue` | `string` | No |  |
@@ -155,14 +155,14 @@ $score = $client->Score();
 
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
-| `away_team` | `array` | No |  |
+| `awayTeam` | `array` | No |  |
 | `competition` | `string` | No |  |
-| `home_team` | `array` | No |  |
-| `match_date` | `string` | No |  |
-| `match_id` | `string` | No |  |
+| `homeTeam` | `array` | No |  |
+| `matchDate` | `string` | No |  |
+| `matchId` | `string` | No |  |
 | `minute` | `string` | No |  |
 | `sport` | `string` | No |  |
-| `start_time` | `string` | No |  |
+| `startTime` | `string` | No |  |
 | `status` | `string` | No |  |
 
 ### Operations
