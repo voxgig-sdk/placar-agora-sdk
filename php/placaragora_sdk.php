@@ -40,7 +40,7 @@ class PlacarAgoraSDK
         $utility = new PlacarAgoraUtility();
         $this->_utility = $utility;
 
-        $config = PlacarAgoraConfig::make_config();
+        $config = PlacarAgoraConfig::shared_config();
 
         $this->_rootctx = ($utility->make_context)([
             "client" => $this,

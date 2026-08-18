@@ -33,7 +33,7 @@ class ScheduleEntityTest < Minitest::Test
     assert_equal 3, seen.length
 
     # Inbound: streaming active -> yields each item from the feature.
-    cfg = PlacarAgoraConfig.make_config
+    cfg = PlacarAgoraConfig.shared_config
     if cfg["feature"].is_a?(Hash) && cfg["feature"].key?("streaming")
       sdk = PlacarAgoraSDK.test(seed, { "feature" => { "streaming" => { "active" => true } } })
       got = []

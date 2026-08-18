@@ -28,7 +28,7 @@ class PlacarAgoraSDK
     utility = PlacarAgoraUtility.new
     @_utility = utility
 
-    config = PlacarAgoraConfig.make_config
+    config = PlacarAgoraConfig.shared_config
 
     @_rootctx = utility.make_context.call({
       "client" => self,
