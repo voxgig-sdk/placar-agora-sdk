@@ -239,13 +239,13 @@ returns a result `Hash` with these keys:
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchId` |  |
-| `scheduledTime` |  |
-| `sport` |  |
-| `status` |  |
-| `venue` |  |
+| `matchId` | Unique identifier for the match |
+| `scheduledTime` | Scheduled start time of the match |
+| `sport` | Type of sport |
+| `status` | Match status |
+| `venue` | Venue where the match will be played |
 
 Operations: List.
 
@@ -256,14 +256,14 @@ API path: `/api/upcoming-games`
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchDate` |  |
-| `matchId` |  |
-| `minute` |  |
-| `sport` |  |
-| `startTime` |  |
-| `status` |  |
+| `matchDate` | Date and time when the match took place |
+| `matchId` | Unique identifier for the match |
+| `minute` | Current minute of the match |
+| `sport` | Type of sport |
+| `startTime` | Match start time |
+| `status` | Match status |
 
 Operations: List.
 
@@ -289,13 +289,13 @@ Create an instance: `schedule = client.Schedule`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `Hash` |  |
-| `competition` | `String` |  |
+| `competition` | `String` | Name of the competition or league |
 | `homeTeam` | `Hash` |  |
-| `matchId` | `String` |  |
-| `scheduledTime` | `String` |  |
-| `sport` | `String` |  |
-| `status` | `String` |  |
-| `venue` | `String` |  |
+| `matchId` | `String` | Unique identifier for the match |
+| `scheduledTime` | `String` | Scheduled start time of the match |
+| `sport` | `String` | Type of sport |
+| `status` | `String` | Match status |
+| `venue` | `String` | Venue where the match will be played |
 
 #### Example: List
 
@@ -320,14 +320,14 @@ Create an instance: `score = client.Score`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `Hash` |  |
-| `competition` | `String` |  |
+| `competition` | `String` | Name of the competition or league |
 | `homeTeam` | `Hash` |  |
-| `matchDate` | `String` |  |
-| `matchId` | `String` |  |
-| `minute` | `String` |  |
-| `sport` | `String` |  |
-| `startTime` | `String` |  |
-| `status` | `String` |  |
+| `matchDate` | `String` | Date and time when the match took place |
+| `matchId` | `String` | Unique identifier for the match |
+| `minute` | `String` | Current minute of the match |
+| `sport` | `String` | Type of sport |
+| `startTime` | `String` | Match start time |
+| `status` | `String` | Match status |
 
 #### Example: List
 

@@ -245,13 +245,13 @@ On error, `ok` is `False` and `err` contains the error value.
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchId` |  |
-| `scheduledTime` |  |
-| `sport` |  |
-| `status` |  |
-| `venue` |  |
+| `matchId` | Unique identifier for the match |
+| `scheduledTime` | Scheduled start time of the match |
+| `sport` | Type of sport |
+| `status` | Match status |
+| `venue` | Venue where the match will be played |
 
 Operations: List.
 
@@ -262,14 +262,14 @@ API path: `/api/upcoming-games`
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchDate` |  |
-| `matchId` |  |
-| `minute` |  |
-| `sport` |  |
-| `startTime` |  |
-| `status` |  |
+| `matchDate` | Date and time when the match took place |
+| `matchId` | Unique identifier for the match |
+| `minute` | Current minute of the match |
+| `sport` | Type of sport |
+| `startTime` | Match start time |
+| `status` | Match status |
 
 Operations: List.
 
@@ -295,13 +295,13 @@ Create an instance: `schedule = client.Schedule()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `dict` |  |
-| `competition` | `str` |  |
+| `competition` | `str` | Name of the competition or league |
 | `homeTeam` | `dict` |  |
-| `matchId` | `str` |  |
-| `scheduledTime` | `str` |  |
-| `sport` | `str` |  |
-| `status` | `str` |  |
-| `venue` | `str` |  |
+| `matchId` | `str` | Unique identifier for the match |
+| `scheduledTime` | `str` | Scheduled start time of the match |
+| `sport` | `str` | Type of sport |
+| `status` | `str` | Match status |
+| `venue` | `str` | Venue where the match will be played |
 
 #### Example: List
 
@@ -325,14 +325,14 @@ Create an instance: `score = client.Score()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `dict` |  |
-| `competition` | `str` |  |
+| `competition` | `str` | Name of the competition or league |
 | `homeTeam` | `dict` |  |
-| `matchDate` | `str` |  |
-| `matchId` | `str` |  |
-| `minute` | `str` |  |
-| `sport` | `str` |  |
-| `startTime` | `str` |  |
-| `status` | `str` |  |
+| `matchDate` | `str` | Date and time when the match took place |
+| `matchId` | `str` | Unique identifier for the match |
+| `minute` | `str` | Current minute of the match |
+| `sport` | `str` | Type of sport |
+| `startTime` | `str` | Match start time |
+| `status` | `str` | Match status |
 
 #### Example: List
 

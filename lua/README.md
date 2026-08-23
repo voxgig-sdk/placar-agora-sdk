@@ -233,13 +233,13 @@ Only `direct()` returns a response envelope — a `table` with `ok`,
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchId` |  |
-| `scheduledTime` |  |
-| `sport` |  |
-| `status` |  |
-| `venue` |  |
+| `matchId` | Unique identifier for the match |
+| `scheduledTime` | Scheduled start time of the match |
+| `sport` | Type of sport |
+| `status` | Match status |
+| `venue` | Venue where the match will be played |
 
 Operations: List.
 
@@ -250,14 +250,14 @@ API path: `/api/upcoming-games`
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchDate` |  |
-| `matchId` |  |
-| `minute` |  |
-| `sport` |  |
-| `startTime` |  |
-| `status` |  |
+| `matchDate` | Date and time when the match took place |
+| `matchId` | Unique identifier for the match |
+| `minute` | Current minute of the match |
+| `sport` | Type of sport |
+| `startTime` | Match start time |
+| `status` | Match status |
 
 Operations: List.
 
@@ -283,13 +283,13 @@ Create an instance: `local schedule = client:Schedule(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `table` |  |
-| `competition` | `string` |  |
+| `competition` | `string` | Name of the competition or league |
 | `homeTeam` | `table` |  |
-| `matchId` | `string` |  |
-| `scheduledTime` | `string` |  |
-| `sport` | `string` |  |
-| `status` | `string` |  |
-| `venue` | `string` |  |
+| `matchId` | `string` | Unique identifier for the match |
+| `scheduledTime` | `string` | Scheduled start time of the match |
+| `sport` | `string` | Type of sport |
+| `status` | `string` | Match status |
+| `venue` | `string` | Venue where the match will be played |
 
 #### Example: List
 
@@ -313,14 +313,14 @@ Create an instance: `local score = client:Score(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `table` |  |
-| `competition` | `string` |  |
+| `competition` | `string` | Name of the competition or league |
 | `homeTeam` | `table` |  |
-| `matchDate` | `string` |  |
-| `matchId` | `string` |  |
-| `minute` | `string` |  |
-| `sport` | `string` |  |
-| `startTime` | `string` |  |
-| `status` | `string` |  |
+| `matchDate` | `string` | Date and time when the match took place |
+| `matchId` | `string` | Unique identifier for the match |
+| `minute` | `string` | Current minute of the match |
+| `sport` | `string` | Type of sport |
+| `startTime` | `string` | Match start time |
+| `status` | `string` | Match status |
 
 #### Example: List
 

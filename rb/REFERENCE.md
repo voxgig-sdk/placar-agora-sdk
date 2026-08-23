@@ -98,13 +98,13 @@ schedule = client.Schedule
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `awayTeam` | `Hash` | No |  |
-| `competition` | `String` | No |  |
+| `competition` | `String` | No | Name of the competition or league |
 | `homeTeam` | `Hash` | No |  |
-| `matchId` | `String` | No |  |
-| `scheduledTime` | `String` | No |  |
-| `sport` | `String` | No |  |
-| `status` | `String` | No |  |
-| `venue` | `String` | No |  |
+| `matchId` | `String` | No | Unique identifier for the match |
+| `scheduledTime` | `String` | No | Scheduled start time of the match |
+| `sport` | `String` | No | Type of sport |
+| `status` | `String` | No | Match status |
+| `venue` | `String` | No | Venue where the match will be played |
 
 ### Operations
 
@@ -157,14 +157,14 @@ score = client.Score
 | Field | Type | Required | Description |
 | --- | --- | --- | --- |
 | `awayTeam` | `Hash` | No |  |
-| `competition` | `String` | No |  |
+| `competition` | `String` | No | Name of the competition or league |
 | `homeTeam` | `Hash` | No |  |
-| `matchDate` | `String` | No |  |
-| `matchId` | `String` | No |  |
-| `minute` | `String` | No |  |
-| `sport` | `String` | No |  |
-| `startTime` | `String` | No |  |
-| `status` | `String` | No |  |
+| `matchDate` | `String` | No | Date and time when the match took place |
+| `matchId` | `String` | No | Unique identifier for the match |
+| `minute` | `String` | No | Current minute of the match |
+| `sport` | `String` | No | Type of sport |
+| `startTime` | `String` | No | Match start time |
+| `status` | `String` | No | Match status |
 
 ### Operations
 

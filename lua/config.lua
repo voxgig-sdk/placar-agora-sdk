@@ -7,6 +7,9 @@ local function make_config()
   return {
     main = {
       name = "PlacarAgora",
+      slug = "placar-agora",
+      version = "0.0.1",
+      target = "lua",
     },
     feature = {
       ["test"] = {
@@ -34,6 +37,7 @@ local function make_config()
           },
           {
             ["name"] = "competition",
+            ["short"] = "Name of the competition or league",
             ["type"] = "`$STRING`",
           },
           {
@@ -42,22 +46,27 @@ local function make_config()
           },
           {
             ["name"] = "matchId",
+            ["short"] = "Unique identifier for the match",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "scheduledTime",
+            ["short"] = "Scheduled start time of the match",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "sport",
+            ["short"] = "Type of sport",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
+            ["short"] = "Match status",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "venue",
+            ["short"] = "Venue where the match will be played",
             ["type"] = "`$STRING`",
           },
         },
@@ -124,6 +133,7 @@ local function make_config()
           },
           {
             ["name"] = "competition",
+            ["short"] = "Name of the competition or league",
             ["type"] = "`$STRING`",
           },
           {
@@ -132,26 +142,32 @@ local function make_config()
           },
           {
             ["name"] = "matchDate",
+            ["short"] = "Date and time when the match took place",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "matchId",
+            ["short"] = "Unique identifier for the match",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "minute",
+            ["short"] = "Current minute of the match",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "sport",
+            ["short"] = "Type of sport",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "startTime",
+            ["short"] = "Match start time",
             ["type"] = "`$STRING`",
           },
           {
             ["name"] = "status",
+            ["short"] = "Match status",
             ["type"] = "`$STRING`",
           },
         },

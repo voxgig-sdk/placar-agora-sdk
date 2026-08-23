@@ -19,9 +19,20 @@ class Config {
     return fi
   }
 
+  // False for a feature added at runtime via options.extend (station's
+  // adopt path) - the constructor uses this to skip makeFeature for names
+  // no generated class backs.
+  hasFeature(this: any, fn: string) {
+    return null != FEATURE_CLASS[fn]
+  }
+
 
   main = {
     name: 'PlacarAgora',
+        slug: "placar-agora",
+    version: "0.0.1",
+    target: "ts",
+
   }
 
 
@@ -63,6 +74,7 @@ class Config {
         },
         {
           "name": "competition",
+          "short": "Name of the competition or league",
           "type": "`$STRING`"
         },
         {
@@ -71,22 +83,27 @@ class Config {
         },
         {
           "name": "matchId",
+          "short": "Unique identifier for the match",
           "type": "`$STRING`"
         },
         {
           "name": "scheduledTime",
+          "short": "Scheduled start time of the match",
           "type": "`$STRING`"
         },
         {
           "name": "sport",
+          "short": "Type of sport",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "short": "Match status",
           "type": "`$STRING`"
         },
         {
           "name": "venue",
+          "short": "Venue where the match will be played",
           "type": "`$STRING`"
         }
       ],
@@ -153,6 +170,7 @@ class Config {
         },
         {
           "name": "competition",
+          "short": "Name of the competition or league",
           "type": "`$STRING`"
         },
         {
@@ -161,26 +179,32 @@ class Config {
         },
         {
           "name": "matchDate",
+          "short": "Date and time when the match took place",
           "type": "`$STRING`"
         },
         {
           "name": "matchId",
+          "short": "Unique identifier for the match",
           "type": "`$STRING`"
         },
         {
           "name": "minute",
+          "short": "Current minute of the match",
           "type": "`$STRING`"
         },
         {
           "name": "sport",
+          "short": "Type of sport",
           "type": "`$STRING`"
         },
         {
           "name": "startTime",
+          "short": "Match start time",
           "type": "`$STRING`"
         },
         {
           "name": "status",
+          "short": "Match status",
           "type": "`$STRING`"
         }
       ],

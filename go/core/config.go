@@ -11,6 +11,9 @@ func MakeConfig() map[string]any {
 	return map[string]any{
 		"main": map[string]any{
 			"name": "PlacarAgora",
+			"slug": "placar-agora",
+			"version": "0.0.1",
+			"target": "go",
 		},
 		"feature": map[string]any{
 			"test": map[string]any{
@@ -38,6 +41,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "competition",
+						"short": "Name of the competition or league",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -46,22 +50,27 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "matchId",
+						"short": "Unique identifier for the match",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "scheduledTime",
+						"short": "Scheduled start time of the match",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sport",
+						"short": "Type of sport",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Match status",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "venue",
+						"short": "Venue where the match will be played",
 						"type": "`$STRING`",
 					},
 				},
@@ -128,6 +137,7 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "competition",
+						"short": "Name of the competition or league",
 						"type": "`$STRING`",
 					},
 					map[string]any{
@@ -136,26 +146,32 @@ func MakeConfig() map[string]any {
 					},
 					map[string]any{
 						"name": "matchDate",
+						"short": "Date and time when the match took place",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "matchId",
+						"short": "Unique identifier for the match",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "minute",
+						"short": "Current minute of the match",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "sport",
+						"short": "Type of sport",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "startTime",
+						"short": "Match start time",
 						"type": "`$STRING`",
 					},
 					map[string]any{
 						"name": "status",
+						"short": "Match status",
 						"type": "`$STRING`",
 					},
 				},

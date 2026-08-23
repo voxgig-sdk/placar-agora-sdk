@@ -42,6 +42,7 @@
               "active": true,
               "name": "competition",
               "req": false,
+              "short": "Name of the competition or league",
               "type": "`$STRING`"
             },
             {
@@ -54,30 +55,35 @@
               "active": true,
               "name": "matchId",
               "req": false,
+              "short": "Unique identifier for the match",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "scheduledTime",
               "req": false,
+              "short": "Scheduled start time of the match",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sport",
               "req": false,
+              "short": "Type of sport",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Match status",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "venue",
               "req": false,
+              "short": "Venue where the match will be played",
               "type": "`$STRING`"
             }
           ],
@@ -159,6 +165,7 @@
               "active": true,
               "name": "competition",
               "req": false,
+              "short": "Name of the competition or league",
               "type": "`$STRING`"
             },
             {
@@ -171,36 +178,42 @@
               "active": true,
               "name": "matchDate",
               "req": false,
+              "short": "Date and time when the match took place",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "matchId",
               "req": false,
+              "short": "Unique identifier for the match",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "minute",
               "req": false,
+              "short": "Current minute of the match",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "sport",
               "req": false,
+              "short": "Type of sport",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "startTime",
               "req": false,
+              "short": "Match start time",
               "type": "`$STRING`"
             },
             {
               "active": true,
               "name": "status",
               "req": false,
+              "short": "Match status",
               "type": "`$STRING`"
             }
           ],

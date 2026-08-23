@@ -13,6 +13,7 @@ main: kit: entity: schedule: {
     {
       name: "competition"
       req: false
+      short: "Name of the competition or league"
       type: "`$STRING`"
     }
     {
@@ -23,26 +24,31 @@ main: kit: entity: schedule: {
     {
       name: "matchId"
       req: false
+      short: "Unique identifier for the match"
       type: "`$STRING`"
     }
     {
       name: "scheduledTime"
       req: false
+      short: "Scheduled start time of the match"
       type: "`$STRING`"
     }
     {
       name: "sport"
       req: false
+      short: "Type of sport"
       type: "`$STRING`"
     }
     {
       name: "status"
       req: false
+      short: "Match status"
       type: "`$STRING`"
     }
     {
       name: "venue"
       req: false
+      short: "Venue where the match will be played"
       type: "`$STRING`"
     }
   ]

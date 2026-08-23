@@ -13,6 +13,7 @@ main: kit: entity: score: {
     {
       name: "competition"
       req: false
+      short: "Name of the competition or league"
       type: "`$STRING`"
     }
     {
@@ -23,31 +24,37 @@ main: kit: entity: score: {
     {
       name: "matchDate"
       req: false
+      short: "Date and time when the match took place"
       type: "`$STRING`"
     }
     {
       name: "matchId"
       req: false
+      short: "Unique identifier for the match"
       type: "`$STRING`"
     }
     {
       name: "minute"
       req: false
+      short: "Current minute of the match"
       type: "`$STRING`"
     }
     {
       name: "sport"
       req: false
+      short: "Type of sport"
       type: "`$STRING`"
     }
     {
       name: "startTime"
       req: false
+      short: "Match start time"
       type: "`$STRING`"
     }
     {
       name: "status"
       req: false
+      short: "Match status"
       type: "`$STRING`"
     }
   ]

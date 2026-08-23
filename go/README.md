@@ -6,7 +6,7 @@ The Golang SDK for the PlacarAgora API — an entity-oriented client using stand
 
 It exposes the API as capitalised, semantic **Entities** — e.g. `client.Schedule(nil)` — each with the same small set of operations (`List`) instead of raw URL paths and query strings. You call meaning, not endpoints, which keeps the cognitive load low.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb`, `ts` — see
 > the [top-level README](../README.md).
 
 
@@ -262,13 +262,13 @@ Only `Direct()` returns a response envelope — a `map[string]any` with
 | Field | Description |
 | --- | --- |
 | `"awayTeam"` |  |
-| `"competition"` |  |
+| `"competition"` | Name of the competition or league |
 | `"homeTeam"` |  |
-| `"matchId"` |  |
-| `"scheduledTime"` |  |
-| `"sport"` |  |
-| `"status"` |  |
-| `"venue"` |  |
+| `"matchId"` | Unique identifier for the match |
+| `"scheduledTime"` | Scheduled start time of the match |
+| `"sport"` | Type of sport |
+| `"status"` | Match status |
+| `"venue"` | Venue where the match will be played |
 
 Operations: List.
 
@@ -279,14 +279,14 @@ API path: `/api/upcoming-games`
 | Field | Description |
 | --- | --- |
 | `"awayTeam"` |  |
-| `"competition"` |  |
+| `"competition"` | Name of the competition or league |
 | `"homeTeam"` |  |
-| `"matchDate"` |  |
-| `"matchId"` |  |
-| `"minute"` |  |
-| `"sport"` |  |
-| `"startTime"` |  |
-| `"status"` |  |
+| `"matchDate"` | Date and time when the match took place |
+| `"matchId"` | Unique identifier for the match |
+| `"minute"` | Current minute of the match |
+| `"sport"` | Type of sport |
+| `"startTime"` | Match start time |
+| `"status"` | Match status |
 
 Operations: List.
 
@@ -312,13 +312,13 @@ Create an instance: `schedule := client.Schedule(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `map[string]any` |  |
-| `competition` | `string` |  |
+| `competition` | `string` | Name of the competition or league |
 | `homeTeam` | `map[string]any` |  |
-| `matchId` | `string` |  |
-| `scheduledTime` | `string` |  |
-| `sport` | `string` |  |
-| `status` | `string` |  |
-| `venue` | `string` |  |
+| `matchId` | `string` | Unique identifier for the match |
+| `scheduledTime` | `string` | Scheduled start time of the match |
+| `sport` | `string` | Type of sport |
+| `status` | `string` | Match status |
+| `venue` | `string` | Venue where the match will be played |
 
 #### Example: List
 
@@ -346,14 +346,14 @@ Create an instance: `score := client.Score(nil)`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `map[string]any` |  |
-| `competition` | `string` |  |
+| `competition` | `string` | Name of the competition or league |
 | `homeTeam` | `map[string]any` |  |
-| `matchDate` | `string` |  |
-| `matchId` | `string` |  |
-| `minute` | `string` |  |
-| `sport` | `string` |  |
-| `startTime` | `string` |  |
-| `status` | `string` |  |
+| `matchDate` | `string` | Date and time when the match took place |
+| `matchId` | `string` | Unique identifier for the match |
+| `minute` | `string` | Current minute of the match |
+| `sport` | `string` | Type of sport |
+| `startTime` | `string` | Match start time |
+| `status` | `string` | Match status |
 
 #### Example: List
 

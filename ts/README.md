@@ -9,7 +9,7 @@ The API is exposed as capitalised, semantic **Entities** — e.g.
 instead of raw URL paths and query parameters. This keeps the surface
 predictable and low-friction for both humans and AI agents.
 
-> Other languages, the CLI, and MCP server live alongside this one — see
+> Also generated from this model: `go`, `go-cli`, `go-mcp`, `lua`, `php`, `py`, `rb` — see
 > the [top-level README](../README.md).
 
 
@@ -289,13 +289,13 @@ The `prepare()` method returns:
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchId` |  |
-| `scheduledTime` |  |
-| `sport` |  |
-| `status` |  |
-| `venue` |  |
+| `matchId` | Unique identifier for the match |
+| `scheduledTime` | Scheduled start time of the match |
+| `sport` | Type of sport |
+| `status` | Match status |
+| `venue` | Venue where the match will be played |
 
 Operations: list.
 
@@ -306,14 +306,14 @@ API path: `/api/upcoming-games`
 | Field | Description |
 | --- | --- |
 | `awayTeam` |  |
-| `competition` |  |
+| `competition` | Name of the competition or league |
 | `homeTeam` |  |
-| `matchDate` |  |
-| `matchId` |  |
-| `minute` |  |
-| `sport` |  |
-| `startTime` |  |
-| `status` |  |
+| `matchDate` | Date and time when the match took place |
+| `matchId` | Unique identifier for the match |
+| `minute` | Current minute of the match |
+| `sport` | Type of sport |
+| `startTime` | Match start time |
+| `status` | Match status |
 
 Operations: list.
 
@@ -339,13 +339,13 @@ Create an instance: `const schedule = client.Schedule()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `Record<string, any>` |  |
-| `competition` | `string` |  |
+| `competition` | `string` | Name of the competition or league |
 | `homeTeam` | `Record<string, any>` |  |
-| `matchId` | `string` |  |
-| `scheduledTime` | `string` |  |
-| `sport` | `string` |  |
-| `status` | `string` |  |
-| `venue` | `string` |  |
+| `matchId` | `string` | Unique identifier for the match |
+| `scheduledTime` | `string` | Scheduled start time of the match |
+| `sport` | `string` | Type of sport |
+| `status` | `string` | Match status |
+| `venue` | `string` | Venue where the match will be played |
 
 #### Example: List
 
@@ -369,14 +369,14 @@ Create an instance: `const score = client.Score()`
 | Field | Type | Description |
 | --- | --- | --- |
 | `awayTeam` | `Record<string, any>` |  |
-| `competition` | `string` |  |
+| `competition` | `string` | Name of the competition or league |
 | `homeTeam` | `Record<string, any>` |  |
-| `matchDate` | `string` |  |
-| `matchId` | `string` |  |
-| `minute` | `string` |  |
-| `sport` | `string` |  |
-| `startTime` | `string` |  |
-| `status` | `string` |  |
+| `matchDate` | `string` | Date and time when the match took place |
+| `matchId` | `string` | Unique identifier for the match |
+| `minute` | `string` | Current minute of the match |
+| `sport` | `string` | Type of sport |
+| `startTime` | `string` | Match start time |
+| `status` | `string` | Match status |
 
 #### Example: List
 
