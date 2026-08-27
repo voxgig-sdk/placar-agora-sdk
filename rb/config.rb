@@ -28,6 +28,7 @@ module PlacarAgoraConfig
           "options" => {
             "active" => false,
           },
+          "transport" => "base",
         },
       },
       "options" => {
