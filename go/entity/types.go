@@ -26,14 +26,9 @@ type Schedule struct {
 
 // ScheduleListMatch is the typed request payload for Schedule.ListTyped.
 type ScheduleListMatch struct {
-	AwayTeam *map[string]any `json:"awayTeam,omitempty"`
-	Competition *string `json:"competition,omitempty"`
-	HomeTeam *map[string]any `json:"homeTeam,omitempty"`
-	MatchId *string `json:"matchId,omitempty"`
-	ScheduledTime *string `json:"scheduledTime,omitempty"`
+	Date *string `json:"date,omitempty"`
 	Sport *string `json:"sport,omitempty"`
-	Status *string `json:"status,omitempty"`
-	Venue *string `json:"venue,omitempty"`
+	Team *string `json:"team,omitempty"`
 }
 
 // Score is the typed data model for the score entity.
@@ -51,15 +46,9 @@ type Score struct {
 
 // ScoreListMatch is the typed request payload for Score.ListTyped.
 type ScoreListMatch struct {
-	AwayTeam *map[string]any `json:"awayTeam,omitempty"`
-	Competition *string `json:"competition,omitempty"`
-	HomeTeam *map[string]any `json:"homeTeam,omitempty"`
-	MatchDate *string `json:"matchDate,omitempty"`
-	MatchId *string `json:"matchId,omitempty"`
-	Minute *string `json:"minute,omitempty"`
+	Date *string `json:"date,omitempty"`
 	Sport *string `json:"sport,omitempty"`
-	StartTime *string `json:"startTime,omitempty"`
-	Status *string `json:"status,omitempty"`
+	Team *string `json:"team,omitempty"`
 }
 
 // asMap turns a typed request/data struct into the map[string]any the

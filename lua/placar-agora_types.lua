@@ -17,14 +17,9 @@
 ---@field venue? string
 
 ---@class ScheduleListMatch
----@field awayTeam? table
----@field competition? string
----@field homeTeam? table
----@field matchId? string
----@field scheduledTime? string
+---@field date? string
 ---@field sport? string
----@field status? string
----@field venue? string
+---@field team? string
 
 ---@class Score
 ---@field awayTeam? table
@@ -38,15 +33,9 @@
 ---@field status? string
 
 ---@class ScoreListMatch
----@field awayTeam? table
----@field competition? string
----@field homeTeam? table
----@field matchDate? string
----@field matchId? string
----@field minute? string
+---@field date? string
 ---@field sport? string
----@field startTime? string
----@field status? string
+---@field team? string
 
 local M = {}
 

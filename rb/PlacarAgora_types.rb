@@ -47,38 +47,18 @@ Schedule = Struct.new(
 
 # Request payload for Schedule#list.
 #
-# @!attribute [rw] awayTeam
-#   @return [Hash, nil]
-#
-# @!attribute [rw] competition
-#   @return [String, nil]
-#
-# @!attribute [rw] homeTeam
-#   @return [Hash, nil]
-#
-# @!attribute [rw] matchId
-#   @return [String, nil]
-#
-# @!attribute [rw] scheduledTime
+# @!attribute [rw] date
 #   @return [String, nil]
 #
 # @!attribute [rw] sport
 #   @return [String, nil]
 #
-# @!attribute [rw] status
-#   @return [String, nil]
-#
-# @!attribute [rw] venue
+# @!attribute [rw] team
 #   @return [String, nil]
 ScheduleListMatch = Struct.new(
-  :awayTeam,
-  :competition,
-  :homeTeam,
-  :matchId,
-  :scheduledTime,
+  :date,
   :sport,
-  :status,
-  :venue,
+  :team,
   keyword_init: true
 )
 
@@ -125,42 +105,18 @@ Score = Struct.new(
 
 # Request payload for Score#list.
 #
-# @!attribute [rw] awayTeam
-#   @return [Hash, nil]
-#
-# @!attribute [rw] competition
-#   @return [String, nil]
-#
-# @!attribute [rw] homeTeam
-#   @return [Hash, nil]
-#
-# @!attribute [rw] matchDate
-#   @return [String, nil]
-#
-# @!attribute [rw] matchId
-#   @return [String, nil]
-#
-# @!attribute [rw] minute
+# @!attribute [rw] date
 #   @return [String, nil]
 #
 # @!attribute [rw] sport
 #   @return [String, nil]
 #
-# @!attribute [rw] startTime
-#   @return [String, nil]
-#
-# @!attribute [rw] status
+# @!attribute [rw] team
 #   @return [String, nil]
 ScoreListMatch = Struct.new(
-  :awayTeam,
-  :competition,
-  :homeTeam,
-  :matchDate,
-  :matchId,
-  :minute,
+  :date,
   :sport,
-  :startTime,
-  :status,
+  :team,
   keyword_init: true
 )
 

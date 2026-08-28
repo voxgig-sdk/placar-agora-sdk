@@ -28,14 +28,9 @@ class Schedule
 /** Request payload for Schedule#list. */
 class ScheduleListMatch
 {
-    public ?array $awayTeam = null;
-    public ?string $competition = null;
-    public ?array $homeTeam = null;
-    public ?string $matchId = null;
-    public ?string $scheduledTime = null;
+    public ?string $date = null;
     public ?string $sport = null;
-    public ?string $status = null;
-    public ?string $venue = null;
+    public ?string $team = null;
 }
 
 /** Score entity data model. */
@@ -55,14 +50,8 @@ class Score
 /** Request payload for Score#list. */
 class ScoreListMatch
 {
-    public ?array $awayTeam = null;
-    public ?string $competition = null;
-    public ?array $homeTeam = null;
-    public ?string $matchDate = null;
-    public ?string $matchId = null;
-    public ?string $minute = null;
+    public ?string $date = null;
     public ?string $sport = null;
-    public ?string $startTime = null;
-    public ?string $status = null;
+    public ?string $team = null;
 }
 

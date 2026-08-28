@@ -28,14 +28,9 @@ class Schedule(TypedDict, total=False):
 
 
 class ScheduleListMatch(TypedDict, total=False):
-    awayTeam: dict
-    competition: str
-    homeTeam: dict
-    matchId: str
-    scheduledTime: str
+    date: str
     sport: str
-    status: str
-    venue: str
+    team: str
 
 
 class Score(TypedDict, total=False):
@@ -51,12 +46,6 @@ class Score(TypedDict, total=False):
 
 
 class ScoreListMatch(TypedDict, total=False):
-    awayTeam: dict
-    competition: str
-    homeTeam: dict
-    matchDate: str
-    matchId: str
-    minute: str
+    date: str
     sport: str
-    startTime: str
-    status: str
+    team: str

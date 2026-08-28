@@ -17,14 +17,9 @@ export interface Schedule {
 }
 
 export interface ScheduleListMatch {
-  awayTeam?: Record<string, any>
-  competition?: string
-  homeTeam?: Record<string, any>
-  matchId?: string
-  scheduledTime?: string
+  date?: string
   sport?: string
-  status?: string
-  venue?: string
+  team?: string
 }
 
 export interface Score {
@@ -40,14 +35,8 @@ export interface Score {
 }
 
 export interface ScoreListMatch {
-  awayTeam?: Record<string, any>
-  competition?: string
-  homeTeam?: Record<string, any>
-  matchDate?: string
-  matchId?: string
-  minute?: string
+  date?: string
   sport?: string
-  startTime?: string
-  status?: string
+  team?: string
 }
 
