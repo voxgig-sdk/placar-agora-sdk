@@ -22,6 +22,7 @@ main: kit: entity: score: {
       type: "`$OBJECT`"
     }
     {
+      format: "date-time"
       name: "matchDate"
       req: false
       short: "Date and time when the match took place"
@@ -46,6 +47,7 @@ main: kit: entity: score: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "startTime"
       req: false
       short: "Match start time"
@@ -92,9 +94,13 @@ main: kit: entity: score: {
           }
           method: "GET"
           orig: "/api/final-results"
-          parts: [
-            "api"
-            "final-results"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "final-results"
+            }
           ]
           select: {
             exist: [
@@ -129,9 +135,13 @@ main: kit: entity: score: {
           }
           method: "GET"
           orig: "/api/live-scores"
-          parts: [
-            "api"
-            "live-scores"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "live-scores"
+            }
           ]
           select: {
             exist: [

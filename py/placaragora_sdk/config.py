@@ -1,6 +1,14 @@
 # PlacarAgora SDK configuration
 
 
+# The sekreto plugin DEFINITIONS the model selected per feature, imported
+# above by name from the modules the catalogue's active `plugin.def`
+# entries declare. Handed to each feature (secrets builds its Sekreto
+# with them): a provider kind not listed here is unknown to that SDK.
+FEATURE_PLUGINS = {
+}
+
+
 _shared_config = None
 
 
@@ -72,6 +80,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "scheduledTime",
             "short": "Scheduled start time of the match",
             "type": "`$STRING`",
@@ -124,9 +133,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/upcoming-games",
-                "parts": [
-                  "api",
-                  "upcoming-games",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "upcoming-games",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -139,6 +152,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.matches`",
                 },
+                "parts": [
+                  "api",
+                  "upcoming-games",
+                ],
               },
             ],
           },
@@ -163,6 +180,7 @@ def make_config():
             "type": "`$OBJECT`",
           },
           {
+            "format": "date-time",
             "name": "matchDate",
             "short": "Date and time when the match took place",
             "type": "`$STRING`",
@@ -183,6 +201,7 @@ def make_config():
             "type": "`$STRING`",
           },
           {
+            "format": "date-time",
             "name": "startTime",
             "short": "Match start time",
             "type": "`$STRING`",
@@ -225,9 +244,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/final-results",
-                "parts": [
-                  "api",
-                  "final-results",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "final-results",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -240,6 +263,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.matches`",
                 },
+                "parts": [
+                  "api",
+                  "final-results",
+                ],
               },
               {
                 "args": {
@@ -261,9 +288,13 @@ def make_config():
                 "kind": "http",
                 "method": "GET",
                 "orig": "/api/live-scores",
-                "parts": [
-                  "api",
-                  "live-scores",
+                "segments": [
+                  {
+                    "lit": "api",
+                  },
+                  {
+                    "lit": "live-scores",
+                  },
                 ],
                 "select": {
                   "exist": [
@@ -275,6 +306,10 @@ def make_config():
                   "req": "`reqdata`",
                   "res": "`body.matches`",
                 },
+                "parts": [
+                  "api",
+                  "live-scores",
+                ],
               },
             ],
           },

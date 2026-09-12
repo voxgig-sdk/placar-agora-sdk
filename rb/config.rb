@@ -63,6 +63,7 @@ module PlacarAgoraConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "scheduledTime",
               "short" => "Scheduled start time of the match",
               "type" => "`$STRING`",
@@ -115,9 +116,13 @@ module PlacarAgoraConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/upcoming-games",
-                  "parts" => [
-                    "api",
-                    "upcoming-games",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "upcoming-games",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -130,6 +135,10 @@ module PlacarAgoraConfig
                     "req" => "`reqdata`",
                     "res" => "`body.matches`",
                   },
+                  "parts" => [
+                    "api",
+                    "upcoming-games",
+                  ],
                 },
               ],
             },
@@ -154,6 +163,7 @@ module PlacarAgoraConfig
               "type" => "`$OBJECT`",
             },
             {
+              "format" => "date-time",
               "name" => "matchDate",
               "short" => "Date and time when the match took place",
               "type" => "`$STRING`",
@@ -174,6 +184,7 @@ module PlacarAgoraConfig
               "type" => "`$STRING`",
             },
             {
+              "format" => "date-time",
               "name" => "startTime",
               "short" => "Match start time",
               "type" => "`$STRING`",
@@ -216,9 +227,13 @@ module PlacarAgoraConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/final-results",
-                  "parts" => [
-                    "api",
-                    "final-results",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "final-results",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -231,6 +246,10 @@ module PlacarAgoraConfig
                     "req" => "`reqdata`",
                     "res" => "`body.matches`",
                   },
+                  "parts" => [
+                    "api",
+                    "final-results",
+                  ],
                 },
                 {
                   "args" => {
@@ -252,9 +271,13 @@ module PlacarAgoraConfig
                   "kind" => "http",
                   "method" => "GET",
                   "orig" => "/api/live-scores",
-                  "parts" => [
-                    "api",
-                    "live-scores",
+                  "segments" => [
+                    {
+                      "lit" => "api",
+                    },
+                    {
+                      "lit" => "live-scores",
+                    },
                   ],
                   "select" => {
                     "exist" => [
@@ -266,6 +289,10 @@ module PlacarAgoraConfig
                     "req" => "`reqdata`",
                     "res" => "`body.matches`",
                   },
+                  "parts" => [
+                    "api",
+                    "live-scores",
+                  ],
                 },
               ],
             },

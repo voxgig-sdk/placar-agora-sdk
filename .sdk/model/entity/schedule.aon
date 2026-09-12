@@ -28,6 +28,7 @@ main: kit: entity: schedule: {
       type: "`$STRING`"
     }
     {
+      format: "date-time"
       name: "scheduledTime"
       req: false
       short: "Scheduled start time of the match"
@@ -86,9 +87,13 @@ main: kit: entity: schedule: {
           }
           method: "GET"
           orig: "/api/upcoming-games"
-          parts: [
-            "api"
-            "upcoming-games"
+          segments: [
+            {
+              lit: "api"
+            }
+            {
+              lit: "upcoming-games"
+            }
           ]
           select: {
             exist: [

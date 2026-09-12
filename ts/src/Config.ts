@@ -10,6 +10,17 @@ const FEATURE_CLASS: Record<string, typeof BaseFeature> = {
 }
 
 
+// Per-feature plugin DEFINITIONS (voxgig/plugin `Definition` values), from
+// the model's active plugin groups. A feature that takes a `plugins` option
+// (secrets over sekreto) reads its own entry; a feature with no plugins has
+// none. Named imports above make each definition statically reachable, so
+// an SDK carries exactly the plugin modules its model selects — the same
+// leanness the old side-effect registry imports bought, without a registry.
+const FEATURE_PLUGINS: Record<string, any[]> = {
+  
+}
+
+
 class Config {
 
   makeFeature(this: any, fn: string) {
@@ -88,6 +99,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "scheduledTime",
           "short": "Scheduled start time of the match",
           "type": "`$STRING`"
@@ -140,9 +152,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/upcoming-games",
-              "parts": [
-                "api",
-                "upcoming-games"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "upcoming-games"
+                }
               ],
               "select": {
                 "exist": [
@@ -154,7 +170,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.matches`"
-              }
+              },
+              "parts": [
+                "api",
+                "upcoming-games"
+              ]
             }
           ]
         }
@@ -179,6 +199,7 @@ class Config {
           "type": "`$OBJECT`"
         },
         {
+          "format": "date-time",
           "name": "matchDate",
           "short": "Date and time when the match took place",
           "type": "`$STRING`"
@@ -199,6 +220,7 @@ class Config {
           "type": "`$STRING`"
         },
         {
+          "format": "date-time",
           "name": "startTime",
           "short": "Match start time",
           "type": "`$STRING`"
@@ -241,9 +263,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/final-results",
-              "parts": [
-                "api",
-                "final-results"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "final-results"
+                }
               ],
               "select": {
                 "exist": [
@@ -255,7 +281,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.matches`"
-              }
+              },
+              "parts": [
+                "api",
+                "final-results"
+              ]
             },
             {
               "args": {
@@ -277,9 +307,13 @@ class Config {
               "kind": "http",
               "method": "GET",
               "orig": "/api/live-scores",
-              "parts": [
-                "api",
-                "live-scores"
+              "segments": [
+                {
+                  "lit": "api"
+                },
+                {
+                  "lit": "live-scores"
+                }
               ],
               "select": {
                 "exist": [
@@ -290,7 +324,11 @@ class Config {
               "transform": {
                 "req": "`reqdata`",
                 "res": "`body.matches`"
-              }
+              },
+              "parts": [
+                "api",
+                "live-scores"
+              ]
             }
           ]
         }
@@ -306,6 +344,7 @@ class Config {
 const config = new Config()
 
 export {
-  config
+  config,
+  FEATURE_PLUGINS,
 }
 

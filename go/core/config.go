@@ -55,6 +55,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "scheduledTime",
 						"short": "Scheduled start time of the match",
 						"type": "`$STRING`",
@@ -107,9 +108,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/upcoming-games",
-								"parts": []any{
-									"api",
-									"upcoming-games",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "upcoming-games",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -121,6 +126,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.matches`",
+								},
+								"parts": []any{
+									"api",
+									"upcoming-games",
 								},
 							},
 						},
@@ -146,6 +155,7 @@ func MakeConfig() map[string]any {
 						"type": "`$OBJECT`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "matchDate",
 						"short": "Date and time when the match took place",
 						"type": "`$STRING`",
@@ -166,6 +176,7 @@ func MakeConfig() map[string]any {
 						"type": "`$STRING`",
 					},
 					map[string]any{
+						"format": "date-time",
 						"name": "startTime",
 						"short": "Match start time",
 						"type": "`$STRING`",
@@ -208,9 +219,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/final-results",
-								"parts": []any{
-									"api",
-									"final-results",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "final-results",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -222,6 +237,10 @@ func MakeConfig() map[string]any {
 								"transform": map[string]any{
 									"req": "`reqdata`",
 									"res": "`body.matches`",
+								},
+								"parts": []any{
+									"api",
+									"final-results",
 								},
 							},
 							map[string]any{
@@ -244,9 +263,13 @@ func MakeConfig() map[string]any {
 								"kind": "http",
 								"method": "GET",
 								"orig": "/api/live-scores",
-								"parts": []any{
-									"api",
-									"live-scores",
+								"segments": []any{
+									map[string]any{
+										"lit": "api",
+									},
+									map[string]any{
+										"lit": "live-scores",
+									},
 								},
 								"select": map[string]any{
 									"exist": []any{
@@ -258,6 +281,10 @@ func MakeConfig() map[string]any {
 									"req": "`reqdata`",
 									"res": "`body.matches`",
 								},
+								"parts": []any{
+									"api",
+									"live-scores",
+								},
 							},
 						},
 					},
@@ -268,6 +295,17 @@ func MakeConfig() map[string]any {
 			},
 		},
 	}
+}
+
+// The plugin definitions the model selected per feature, as []any so a
+// feature package can consume them without core naming its types. Empty
+// when no active feature declares active plugin groups for this target.
+var featurePlugins = map[string][]any{
+}
+
+// FeaturePlugins is the definitions list for one feature's chain.
+func FeaturePlugins(name string) []any {
+	return featurePlugins[name]
 }
 
 var (
