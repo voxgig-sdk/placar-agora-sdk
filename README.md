@@ -105,7 +105,7 @@ local results, err = client:Schedule():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
+| TypeScript | `@voxgig-sdk/placar-agora-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
 | Python | `voxgig-sdk-placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
 | PHP | `voxgig-sdk/placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
 | Golang | `github.com/voxgig-sdk/placar-agora-sdk/go` | `go get github.com/voxgig-sdk/placar-agora-sdk/go@latest` |
@@ -119,7 +119,7 @@ local results, err = client:Schedule():list()
 ### TypeScript
 
 ```ts
-import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora'
+import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora-sdk'
 
 const client = new PlacarAgoraSDK()
 

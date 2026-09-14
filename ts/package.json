@@ -1,5 +1,5 @@
 {
-  "name": "@voxgig-sdk/placar-agora",
+  "name": "@voxgig-sdk/placar-agora-sdk",
   "version": "0.0.1",
   "description": "Unofficial generated TypeScript SDK for the Placar Agora public API. Not affiliated with or endorsed by the upstream API provider.",
   "keywords": [

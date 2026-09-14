@@ -28,7 +28,7 @@ loading a specific record.
 ### 1. Create a client
 
 ```ts
-import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora'
+import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora-sdk'
 
 const client = new PlacarAgoraSDK()
 ```
@@ -467,7 +467,7 @@ placar-agora/
 Import the SDK from the package root:
 
 ```ts
-import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora'
+import { PlacarAgoraSDK } from '@voxgig-sdk/placar-agora-sdk'
 ```
 
 ### Entity state
