@@ -92,6 +92,12 @@ main: kit: entity: score: {
               }
             ]
           }
+          contract: {
+            id: "GET /api/final-results"
+            json: "{\"operationId\":\"getFinalResults\",\"parameters\":[{\"description\":\"Filter by sport type\",\"in\":\"query\",\"name\":\"sport\",\"required\":false,\"schema\":{\"enum\":[\"football\",\"basketball\",\"volleyball\",\"tennis\"],\"type\":\"string\"}},{\"description\":\"Filter by date (YYYY-MM-DD)\",\"in\":\"query\",\"name\":\"date\",\"required\":false,\"schema\":{\"format\":\"date\",\"type\":\"string\"}},{\"description\":\"Filter by team name\",\"in\":\"query\",\"name\":\"team\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"matches\":{\"items\":{\"properties\":{\"awayTeam\":{\"properties\":{\"name\":{\"type\":\"string\"},\"score\":{\"type\":\"integer\"}},\"type\":\"object\"},\"competition\":{\"description\":\"Name of the competition or league\",\"type\":\"string\"},\"homeTeam\":{\"properties\":{\"name\":{\"type\":\"string\"},\"score\":{\"type\":\"integer\"}},\"type\":\"object\"},\"matchDate\":{\"description\":\"Date and time when the match took place\",\"format\":\"date-time\",\"type\":\"string\"},\"matchId\":{\"description\":\"Unique identifier for the match\",\"type\":\"string\"},\"sport\":{\"description\":\"Type of sport\",\"type\":\"string\"},\"status\":{\"description\":\"Match status\",\"enum\":[\"finished\",\"completed\"],\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response with final results\"},\"400\":{\"description\":\"Bad request\"},\"500\":{\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
+          }
           method: "GET"
           orig: "/api/final-results"
           segments: [
@@ -132,6 +138,12 @@ main: kit: entity: score: {
                 type: "`$STRING`"
               }
             ]
+          }
+          contract: {
+            id: "GET /api/live-scores"
+            json: "{\"operationId\":\"getLiveScores\",\"parameters\":[{\"description\":\"Filter by sport type\",\"in\":\"query\",\"name\":\"sport\",\"required\":false,\"schema\":{\"enum\":[\"football\",\"basketball\",\"volleyball\",\"tennis\"],\"type\":\"string\"}},{\"description\":\"Filter by team name\",\"in\":\"query\",\"name\":\"team\",\"required\":false,\"schema\":{\"type\":\"string\"}}],\"protocol\":\"http\",\"responses\":{\"200\":{\"content\":{\"application/json\":{\"schema\":{\"properties\":{\"matches\":{\"items\":{\"properties\":{\"awayTeam\":{\"properties\":{\"name\":{\"type\":\"string\"},\"score\":{\"type\":\"integer\"}},\"type\":\"object\"},\"competition\":{\"description\":\"Name of the competition or league\",\"type\":\"string\"},\"homeTeam\":{\"properties\":{\"name\":{\"type\":\"string\"},\"score\":{\"type\":\"integer\"}},\"type\":\"object\"},\"matchId\":{\"description\":\"Unique identifier for the match\",\"type\":\"string\"},\"minute\":{\"description\":\"Current minute of the match\",\"type\":\"string\"},\"sport\":{\"description\":\"Type of sport\",\"type\":\"string\"},\"startTime\":{\"description\":\"Match start time\",\"format\":\"date-time\",\"type\":\"string\"},\"status\":{\"description\":\"Current match status\",\"enum\":[\"live\",\"halftime\",\"pending\"],\"type\":\"string\"}},\"type\":\"object\"},\"type\":\"array\"}},\"type\":\"object\"}}},\"description\":\"Successful response with live scores\"},\"400\":{\"description\":\"Bad request\"},\"500\":{\"description\":\"Internal server error\"}},\"securitySource\":\"unspecified\"}"
+            source: "openapi3"
+            version: 1
           }
           method: "GET"
           orig: "/api/live-scores"

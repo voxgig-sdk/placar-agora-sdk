@@ -46,5 +46,124 @@
         "venue": "s147"
       }
     }
+  },
+  "requests": {
+    "GET /api/upcoming-games": {
+      "provenance": "operation-contract",
+      "contract": {
+        "operationId": "getUpcomingGames",
+        "parameters": [
+          {
+            "description": "Filter by sport type",
+            "in": "query",
+            "name": "sport",
+            "required": false,
+            "schema": {
+              "enum": [
+                "football",
+                "basketball",
+                "volleyball",
+                "tennis"
+              ],
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter by date (YYYY-MM-DD)",
+            "in": "query",
+            "name": "date",
+            "required": false,
+            "schema": {
+              "format": "date",
+              "type": "string"
+            }
+          },
+          {
+            "description": "Filter by team name",
+            "in": "query",
+            "name": "team",
+            "required": false,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "protocol": "http",
+        "responses": {
+          "200": {
+            "content": {
+              "application/json": {
+                "schema": {
+                  "properties": {
+                    "matches": {
+                      "items": {
+                        "properties": {
+                          "awayTeam": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "competition": {
+                            "description": "Name of the competition or league",
+                            "type": "string"
+                          },
+                          "homeTeam": {
+                            "properties": {
+                              "name": {
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "matchId": {
+                            "description": "Unique identifier for the match",
+                            "type": "string"
+                          },
+                          "scheduledTime": {
+                            "description": "Scheduled start time of the match",
+                            "format": "date-time",
+                            "type": "string"
+                          },
+                          "sport": {
+                            "description": "Type of sport",
+                            "type": "string"
+                          },
+                          "status": {
+                            "description": "Match status",
+                            "enum": [
+                              "scheduled",
+                              "upcoming"
+                            ],
+                            "type": "string"
+                          },
+                          "venue": {
+                            "description": "Venue where the match will be played",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    }
+                  },
+                  "type": "object"
+                }
+              }
+            },
+            "description": "Successful response with upcoming games"
+          },
+          "400": {
+            "description": "Bad request"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "securitySource": "unspecified"
+      }
+    }
   }
 }

@@ -1,12 +1,18 @@
 # PlacarAgora SDK feature factory
 
 from placaragora_sdk.feature.base_feature import PlacarAgoraBaseFeature
+from placaragora_sdk.feature.ratelimit_feature import PlacarAgoraRatelimitFeature
+from placaragora_sdk.feature.retry_feature import PlacarAgoraRetryFeature
 from placaragora_sdk.feature.test_feature import PlacarAgoraTestFeature
+from placaragora_sdk.feature.timeout_feature import PlacarAgoraTimeoutFeature
 
 
 _FEATURES = {
     "base": lambda: PlacarAgoraBaseFeature(),
+    "ratelimit": lambda: PlacarAgoraRatelimitFeature(),
+    "retry": lambda: PlacarAgoraRetryFeature(),
     "test": lambda: PlacarAgoraTestFeature(),
+    "timeout": lambda: PlacarAgoraTimeoutFeature(),
 }
 
 
