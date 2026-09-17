@@ -105,12 +105,12 @@ local results, err = client:Schedule():list()
 
 | Language | Package | Install |
 | --- | --- | --- |
-| TypeScript | `@voxgig-sdk/placar-agora-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
-| Python | `voxgig-sdk-placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
-| PHP | `voxgig-sdk/placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
+| TypeScript | `@voxgig-sdk/placar-agora-sdk` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/tags) |
+| Python | `voxgig-sdk-placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/tags) |
+| PHP | `voxgig-sdk/placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/tags) |
 | Golang | `github.com/voxgig-sdk/placar-agora-sdk/go` | `go get github.com/voxgig-sdk/placar-agora-sdk/go@latest` |
-| Ruby | `voxgig-sdk-placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
-| Lua | `voxgig-sdk-placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/releases) |
+| Ruby | `voxgig-sdk-placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/tags) |
+| Lua | `voxgig-sdk-placar-agora` | publish pending — [install from git tag](https://github.com/voxgig-sdk/placar-agora-sdk/tags) |
 | Go CLI | `github.com/voxgig-sdk/placar-agora-sdk/go-cli` | `go install github.com/voxgig-sdk/placar-agora-sdk/go-cli/cmd/placar-agora@latest` |
 | Go MCP server | `github.com/voxgig-sdk/placar-agora-sdk/go-mcp` | `go get github.com/voxgig-sdk/placar-agora-sdk/go-mcp@latest` |
 

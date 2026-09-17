@@ -1,4 +1,4 @@
 # Entity Models
 
-@"schedule.aon"
-@"score.aon"
+@"./schedule.aon"
+@"./score.aon"

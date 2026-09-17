@@ -1,4 +1,4 @@
 # Flows
 
-@"BasicScheduleFlow.aon"
-@"BasicScoreFlow.aon"
+@"./BasicScheduleFlow.aon"
+@"./BasicScoreFlow.aon"
